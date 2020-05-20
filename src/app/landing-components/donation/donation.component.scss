@@ -1,0 +1,103 @@
+@import "../landingpage-common.scss";
+@import "../../../commonstyles/form-styles.scss";
+@import "../../../commonstyles/modal-styles.scss";
+
+
+
+.cover-photo {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 30, 199, 0.82) 20%,
+      rgba(13, 0, 212, 0.57) 100%
+    ),
+    url(/assets/img/landing/donate-bg1.png);
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mybtn {
+  margin: 4rem 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  letter-spacing: -0.01rem;
+  z-index: 10;
+  a {
+    background: transparent;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    border: 1.5px solid #fff;
+    color: #fff;
+  }
+  a:hover {
+    background: #fff;
+    color: #000c61;
+  }
+}
+.section-1 .mybtn {
+  text-align: center;
+  a {
+    color: #000;
+    border-color: #000;
+  }
+}
+.donate-section {
+  margin: 90px 0 0;
+  padding: 25px 0;
+}
+.form-img {
+  width: 75%;
+  margin: 2rem auto;
+}
+
+@media all and (max-width: 991px) {
+  .mybtn {
+    text-align: center;
+    margin: 3rem auto;
+  }
+  // .cover-photo {
+  //   height: 55vh;
+  // }
+  // .page-title {
+  //   min-height: 55vh;
+  //   margin-top: -55vh;
+  // }
+  .section-1 {
+    margin-top: -50px;
+  }
+  .form-img{
+    display: none;
+  }
+  .donate-img {
+    margin-top: 50px;
+  }
+  .donate-section {
+    margin: 0;
+  }
+  .donation-form {
+    margin-top: 60px;
+  }
+  .section-1{
+    h2{text-align: left !important;}
+  }
+}
+
+@media all and (max-width: 576px) {
+  .donation-form {
+    margin-top: 0px;
+  }
+
+  .section-1 {
+    margin-top: 0px;
+    h2{text-align: center !important;}
+  }
+  
+  .donate-section{
+    img{
+      display: none;
+    }
+  }
+}

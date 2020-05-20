@@ -1,0 +1,29 @@
+@import '../landingpage-common.scss';
+@import '../../../commonstyles/form-styles.scss';
+@import '../../../commonstyles/modal-styles.scss';
+
+.cover-photo{
+    background: linear-gradient(180deg, rgba(0, 70, 216, 0.78) 20%, rgba(0, 106, 255, 0.83) 100%), url(/assets/img/landing/contact-bg.jpeg);
+    background-attachment: fixed;
+  }
+
+
+  @media all and (min-width:991px){
+    .page-title{
+        h1{
+            font-size: 4.5rem;
+        }
+    }
+}
+  
+  @media all and (max-width:576px){
+      .intro-content{
+          margin-top: 10vh;
+      }
+      .cover-photo{
+          height: 75vh;
+      }
+      .page-title {
+        margin-top: -77vh;
+    }
+  }

@@ -1,0 +1,15 @@
+@import '../../../../commonstyles/dashboard-style.scss';
+
+.status-btn{
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+span{
+    margin: 8px 0;
+}
+
+.activity-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

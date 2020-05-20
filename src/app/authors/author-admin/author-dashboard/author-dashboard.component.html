@@ -1,0 +1,92 @@
+<div
+class="dashboard-content-wrapper dash-tab"
+>
+<div class="dashboard-section user-statistic-block">
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-4">
+      <div class="user-statistic">
+        <a routerLink="/author/all-blogs">
+          <span>
+            <i data-feather="edit"></i>
+            <h3>{{totalblogs}}</h3>
+          </span>
+          
+          <span>Blogs Posted</span>
+        </a>
+        
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <div class="user-statistic">
+        <a routerLink="/author/approved-blogs">
+       <span>
+        <i data-feather="check-square"></i>
+        <h3> {{approvedblogs}}</h3>
+       </span>
+       
+        <span>Blogs Aproved</span>
+        </a>
+      </div>
+    </div>
+    <!-- <div class="col-lg-3 col-md-4">
+      <div class="user-statistic">
+        <a routerLink="/author/videos">
+       <span>
+        <i data-feather="video"></i>
+        <h3> {{totalvideos}}</h3>
+       </span>
+     
+        <span>Video Posted</span>
+        </a>
+      </div>
+    </div> -->
+
+  </div>
+</div>
+
+<div class="dashboard-section dashboard-recent-activity">
+  <div class="row">
+    <div class="col-md-12"><h4 class="title"><i data-feather="edit-2"></i> Recently posted blogs</h4>
+      <div class="no-content" *ngIf="!recentblogs?.length">
+        <h3> You have not posted any blog yet. <br> Click <a routerLink="/author/post-blog">here</a> to post one.</h3>
+       
+      </div>
+      <div class="activity-list" *ngFor="let blog of recentblogs">
+          <div class="thumb">
+              <img
+                [src]=blog.image
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+        <div class="content">
+          <h5>{{blog.title}}</h5>
+          <span class="time">{{blog.date_added | date:'MMMM d,yyyy'}}</span>
+          <br>
+
+          <div *ngIf="blog.status == 'deleted'" class="content-info">
+            Status : <span class="status deleted">
+             {{blog.status}}
+            </span>
+          </div>
+         
+      <div *ngIf="blog.status == 'pending'" class="content-info">
+        Status : <span class="status pending">
+         {{blog.status}}
+        </span>
+      </div>
+
+      <div *ngIf="blog.status == 'approved'" class="content-info">
+        Status : <span class="status approved">
+         {{blog.status}}
+        </span>
+      </div>
+        </div>
+        <div class="close-activity buttons">
+          <a class="button" [routerLink]="['/author/blog-details/',blog._id]">View</a>
+        </div>
+      </div></div>
+  </div>
+  
+</div>
+</div>

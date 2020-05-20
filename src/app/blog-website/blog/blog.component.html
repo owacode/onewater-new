@@ -1,0 +1,438 @@
+<div class="cover-photo">
+  <div class="wave"></div>
+</div>
+
+<!----------------------------------
+          LANDING SECTION
+    ------------------------------------>
+<section class="landing-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 banner">
+        <div class="landing-text">
+          <h1 class="platform-heading">
+            OneWater <br />
+            <strong>Blogs</strong>
+          </h1>
+        </div>
+        <img src="assets/img/landing-img.png" class="banner-img" />
+      </div>
+      <div class="col-lg-6 ">
+        <div class="landing-blogs ">
+          <owl-carousel
+          [items]="bannerblogs"
+          [options]="landingBlogsCarousel"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        >
+        <div class="item" *ngFor="let blog of bannerblogs" >
+          <div class="landing-card card-shadow">
+            <div class="landing-blog-img">
+              <img src="{{ blog?.image }}" alt="" />
+            </div>
+            <div class="blog-caption">
+              <div class="tag">
+                {{ blog?.date_added | date:'d, MMMM y'}}
+              </div>
+              <a [routerLink]="['/onewaterblog/admin-blogpost/',blog._id]"
+                ><h3>
+                  {{ blog?.title  }}
+                </h3></a
+              >
+              <div class="author" *ngIf="blog?.author_name">
+                <a
+                [routerLink]="['/onewaterblog/authorprofile/', blog.author_id]"
+                >
+                  <img [src]="blog?.author_image" alt="" />
+                  <p>{{blog?.author_name}}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </owl-carousel>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--LANDING SECTION ENDS-->
+
+<div class="author-btn">
+  <div class="row no-gutter align-items-end">
+    <div class="col-md-7 align-self-center">
+      <div class="reg-text">
+        <h3>
+          Spark important conversations <br> and inspire others
+        </h3>
+        <a [routerLink]="['/onewaterblog/author',toRender]"> Become a OneWater Blogs Author </a>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <img src="assets/img/author-reg-bg.png" alt="" />
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <!--MAYOR SECTION BEGINS-->
+  <!-- <div class="row card-section">
+    <div class="col-lg-9">
+      <section class="mayor-blogs dark-card-container">
+        <div class="blog-block blog-block-right"></div>
+        <h2>
+          Blogs by OneWater Leaders
+        </h2>
+        <owl-carousel
+          [items]="mayorList"
+          [options]="carouselOptions"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        >
+          <div class="item" *ngFor="let blog of mayorList">
+            <div class="outer-card">
+              <div class="outer-overlay"></div>
+              <div class="two-card">
+                <img [src]="blog?.image" alt="" />
+                <div class="blog-caption">
+                  <a
+                    [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]"
+                    title="{{ blog.title }}"
+                  >
+                    <h5>{{ blog?.title | shorten: 30 }}</h5>
+                  </a>
+                  <a class="auth-img" [routerLink]="['/onewaterblog/mayorprofile',blog.mayor_id]">
+                    <img [src]="blog.mayor_image" alt="">
+                    <p>
+                      {{blog?.mayor_name}}
+                    </p>
+                  </a>
+                  <div class="blog-meta-data">
+                    <div class="author">
+                      {{ blog?.date_approved | date: "MMMM d, y" }}
+                    </div>
+                    <div class="likes" *ngIf="blog.likecount">
+                      <i class="fa fa-heart"></i>{{ blog.likecount }}
+                    </div>
+                    <div class="read">{{ blog.read_time }} mins read</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </owl-carousel>
+        <div class="text-center btn-wrapper">
+          <a class="reg-btn" [routerLink]="['/onewaterblog/mayor',toRender]"
+            >Register as Leader</a
+          >
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-3">
+      <h2>
+        Top Leaders
+      </h2>
+      <div class="top-authors card-shadow">
+        <div class="container">
+           <div class="blog-block blog-block-right"></div>
+
+
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-3 col-6" *ngFor="let mayor of mayors">
+              <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">
+                <div class="top-auth-img">
+                  <img src="{{ mayor?.image }}" alt="" />
+                  <h6 style="text-transform: capitalize;">{{ mayor.name }}</h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!--CRO SECTION BEGINS-->
+  <!-- <div class="row card-section">
+    <div class="col-lg-9">
+      <section class="cro-blogs dark-card-container">
+        <div class="blog-block blog-block-left"></div>
+        <div class="">
+          <h2>
+            Blogs by CROs
+          </h2>
+          <owl-carousel
+            [items]="croList"
+            [options]="carouselOptions"
+            [carouselClasses]="['owl-theme', 'row', 'sliding']"
+          >
+            <div class="item" *ngFor="let blog of croList">
+              <div class="outer-card">
+                <div class="outer-overlay"></div>
+                <div class="two-card">
+                  <img [src]="blog.image" alt="" />
+                  <div class="blog-caption">
+                    <a
+                      [routerLink]="['/onewaterblog/cro-blogpost', blog._id]"
+                      title="{{ blog.title }}"
+                    >
+                      <h5>{{ blog.title | shorten:30}}</h5>
+                    </a>
+                    <a class="auth-img" [routerLink]="['/onewaterblog/croprofile',blog.cro_id]">
+                      <img [src]="blog.cro_image" alt="">
+                      <p>
+                        {{blog?.cro_name}}
+                      </p>
+                    </a>
+                    <div class="blog-meta-data">
+                      <div class="author">
+                        {{ blog?.date_approved | date: "MMMM d, y" }}
+                      </div>
+                      <div class="likes" *ngIf="blog.likecount">
+                        <i class="fa fa-heart"></i>{{ blog?.likecount }}
+                      </div>
+                      <div class="read">{{ blog?.read_time }} mins read</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </owl-carousel>
+          <div class="text-center btn-wrapper">
+            <a class="reg-btn" [routerLink]="['/onewaterblog/cro',toRender]"
+              >Register as a CRO</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-3">
+      <h2>
+        Top CROs
+      </h2>
+      <div class="top-authors card-shadow">
+        <div class="container">
+           <div class="blog-block blog-block-right"></div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-3 col-6" *ngFor="let cro of cros">
+              <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">
+                <div class="top-auth-img">
+                  <img src="{{ cro?.image }}" alt="" />
+                  <h6 style="text-transform: capitalize;">{{ cro?.name }}</h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!--FEATURED POST SECTION BEGINS-->
+  <div class="row card-section">
+    <div class="col-lg-9">
+      <!--featured post carousel section starts-->
+      <div class="featured-post">
+        <h2>
+          Featured Posts
+        </h2>
+        <div class="no-data" *ngIf="!featuredblog?.length">
+          <img src="assets/img/icons/no-blog.svg" alt="">
+          <h4>
+            No blogs to display for now.
+          </h4>
+        </div>
+        <owl-carousel
+          [items]="featuredblog"
+          [options]="carouselOptions"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        >
+
+          <div class="item" *ngFor="let blog of featuredblog">
+            <div class="outer-card">
+              <div class="outer-overlay"></div>
+              <div class="two-card">
+                <img [src]="blog.image" alt="" />
+                <div class="blog-caption">
+                  <a
+                    [routerLink]="['/onewaterblog/blogpost/', blog._id]"
+                    title="{{ blog?.title }}"
+                  >
+                    <h5>{{ blog?.title | shorten: 30 }}</h5>
+                  </a>
+                  <a class="auth-img" [routerLink]="['/onewaterblog/authorprofile',blog.author_id]">
+                    <img [src]="blog.author_image" alt="">
+                    <p>
+                      {{blog?.author_name}}
+                    </p>
+                  </a>
+                  <div class="blog-meta-data">
+                    <div class="author">
+                      {{ blog?.date_approved | date: "MMMM d, y" }}
+                    </div>
+                    <div class="likes" *ngIf="blog?.likecount">
+                      <i class="fa fa-heart"></i>{{ blog?.likecount }}
+                    </div>
+                    <div class="read">{{ blog?.read_time }} mins read</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </owl-carousel>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <h2>
+        Top Authors
+      </h2>
+      <div class="top-authors card-shadow">
+        <div class="container">
+          <!-- <div class="blog-block blog-block-right"></div> -->
+
+          <div class="row justify-content-center">
+            <div class="no-data" *ngIf="!authors?.length">
+              <img src="assets/img/icons/no-author.svg" alt="">
+              <h4>
+                No authors on the platform.
+              </h4>
+            </div>
+            <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of topauthors">
+              <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
+                <div class="top-auth-img">
+                  <img src="{{ author.image }}" alt="" />
+                  <h6 style="text-transform: capitalize;">{{ author.name }}</h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------MAIN SECTION START------------------->
+
+<!-- topauthors carousel section starts-->
+
+<div class="wrapper container-fluid">
+  <div class="row no-gutter">
+    <div class="col-lg-9 no-gutter order-lg-first">
+
+      <div class="left-section">
+        <h2>Latest Posts</h2>
+        <div class="no-data" *ngIf="!blogcards?.length">
+          <img src="assets/img/icons/no-post.svg" alt="">
+          <h4>
+            No posts to display for now.
+          </h4>
+        </div>
+       <div class="row align-items-center">
+          <div
+            class="col-lg-4 col-md-6"
+            *ngFor="let item of blogcards; let i = index"
+          >
+            <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
+              <div class="outer-card outer-card-blue">
+                <div class="outer-overlay"></div>
+                <div class="two-card">
+              <div class="blog-card">
+                <div class="overlay-2"></div>
+                <div class="blog-img">
+                  <img [src]="item.image" alt="" />
+                </div>
+                <div class="blog-caption">
+                  <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
+                    <h5>
+                      {{ item?.title | shorten: 40 }}
+                    </h5>
+                  </a>
+                  <div class="blog-category">
+                    <p>
+                      {{ item.sub_category | titlecase }}
+                    </p>
+                  </div>
+                  <div class="author">
+                    <a
+                      [routerLink]="['/onewaterblog/authorprofile/', item.author_id]"
+                    >
+                      <img [src]="item.author_image" alt="" />
+                      <p>{{ item.author_name }}</p>
+                    </a>
+                  </div>
+                  <div class="row card-btn">
+                    <div class="col-6 col-lg-6 col-sm-4">
+                      <div class="like-btn" *ngIf="item?.likecount">
+                        <i class="fa fa-heart"></i> {{ item?.likecount }}
+                      </div>
+                    </div>
+                    <div class="col-6 col-lg-6 col-sm-4">
+                      <div class="read-mins">
+                        {{ item?.read_time }} mins read
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 no-gutter order-first">
+      <aside>
+        <div class="right-section">
+          <div class="side-bar">
+            <div class="categories home-category">
+              <h2>Categories</h2>
+              <div class="categories-card">
+                <div class="row justify-content-center">
+                  <div
+                    class="col-6 col-lg-6 col-sm-3 col-xs-4 no-gutter"
+                    *ngFor="let category of categories; let i = index"
+                  >
+                    <a (click)="showSubCategories(i)">
+                      <div
+                        class="category-box d-flex flex-column align-items-center"
+                      >
+                        <img [src]="category.img" alt="" />
+                        <h6>{{ category.name }}</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="subcategories-card">
+                <a (click)="backToCategories()" class="back-button">
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <h3>{{ currentCategory }}</h3>
+                <div class="row">
+                  <div class="col-12" *ngFor="let subcategory of SubCategories">
+                    <a
+                      [routerLink]="['/onewaterblog/category']"
+                      [queryParams]="{
+                        category: currentCategory,
+                        subcategory: subcategory.subname,
+                        sname: subcategory.sname
+                      }"
+                    >
+                      <div class="subcategory-box d-flex align-items-center">
+                        <img [src]="subcategory.subimg" alt="" />
+                        <p class="ml-3">{{ subcategory.subname }}</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

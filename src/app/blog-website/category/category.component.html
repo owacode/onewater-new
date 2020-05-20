@@ -1,0 +1,138 @@
+<div class="category-wrap">
+ <div class="container">
+    <div class="category-head">
+      <h1> {{subcategory}}
+
+        <h2 class="mt-2">
+          from {{category}}
+        </h2>
+      </h1>
+
+    </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="big-post" *ngIf="singleblog">
+        <a [routerLink]="['/onewaterblog/blogpost']"><img src={{singleblog?.image}} alt=""></a>
+        <div class="blog-caption">
+          <a [routerLink]="['/onewaterblog/blogpost',singleblog?._id]">
+            <h3>
+              {{singleblog?.title}}
+            </h3>
+          </a>
+          <div class="article-meta" *ngIf="author">
+            <a [routerLink]="['/onewaterblog/authorprofile']">
+            <img src={{author?.image}} alt="Author" />
+            </a>
+            <div class="meta-data">
+              <span class="meta-author">By <a [routerLink]="['/onewaterblog/authorprofile/',author?._id]">{{author?.name | titlecase}}</a></span><br />
+              <span class="meta-date">{{ singleblog?.date_approved | date: "MMMM d, y" }}</span>
+                <span class="meta-read">7 mins read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="latest-blogs mt-60">
+        <h2>All Blogs from {{subcategory}}</h2>
+        <div class="no-data" *ngIf="!blogs?.length">
+          <img src="assets/img/icons/no-post.svg" alt="">
+          <h4>
+            No blogs from {{subcategory | titlecase}} to display. 
+          </h4>
+        </div>
+        <div class="outer-card" *ngFor="let blog of blogs">
+          <div class="outer-overlay"></div>
+        <div class="latest-card">
+          <div class="row" >
+            <div class="col-3">
+                <img src={{blog?.image}} alt="">
+              </div>
+              <div class="col-9">
+                <div class="blog-caption">
+                    <a [routerLink]="['/onewaterblog/blogpost/', blog._id]">
+                <h4>{{blog?.title}}</h4>
+                </a>
+                <div class="blog-meta-data">
+                  <div class="author">
+                    By {{author?.name | titlecase}}
+                  </div>
+                  <div class="likes" *ngIf="blog?.likecount">
+                      <i class="fa fa-heart"></i>{{blog?.likecount}} likes
+                  </div>
+                  <div class="read">
+                      7 mins read
+                  </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="popular-blogs" *ngIf="mostlikedblogs?.length">
+           <h2>Popular blogs from other categories</h2>
+           <div class="row">
+             <div class="col-lg-12 col-md-12 col-sm-12" *ngFor="let blog of mostlikedblogs">
+               <div class="popular-card">
+                   <div class="blog-img">
+                 <img src={{blog?.image}} alt="">  </div>
+                 <div class="blog-caption">
+                   <a [routerLink]="['/onewaterblog/blogpost/', blog._id]">
+                 <h6>{{blog?.title | shorten:30}}</h6>
+                 </a>
+                 <div class="blog-meta-data">
+                   <div class="likes" *ngIf="blog?.likecount">
+                       <i class="fa fa-heart"></i>{{blog?.likecount}} likes
+                   </div>
+                   <div class="read">
+                    {{blog?.read_time}} mins read
+                   </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+       </div>
+       <div class="categories mt-60">
+        <h2>More from {{category}}</h2>
+      <div class="categories-card mt-4">
+       
+          <div *ngFor="let category of currentCategory; let i = index">
+            <a *ngIf="category.subname!=subcategory" [routerLink]="['/onewaterblog/category']" [queryParams]="{'category':tempcate, 'subcategory':category.subname, 'sname':category.sname}">
+              <div class="category-box">
+                <div class="row align-items-center">
+                  <div class="col-4">
+                    <img [src]="category.subimg" alt="">
+                  </div>
+                  <div class="col-8">
+                    <h5>{{category.subname}}</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
+          
+        </div>
+        
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row mt-60">
+    <div class="col-lg-8 order-lg-first">
+        
+    </div>
+    <div class="col-lg-4 order-first">
+        
+    </div>
+  </div> -->
+
+
+      </div>
+    </div>
+

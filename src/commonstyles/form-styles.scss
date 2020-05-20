@@ -1,0 +1,334 @@
+#login{
+    min-height: 100vh;
+    padding: 4.5rem 0;
+    background: url(/assets/img/author-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+   background-position: bottom right;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: -10vh;
+    h2{
+      text-align: left;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #000;
+      letter-spacing: -0.21rem;
+      border: none;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding:  0;
+      strong{
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: -0.18rem;
+      }
+    }
+  }
+  .form-box{
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    h1{
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: -0.1rem;
+      padding-bottom: 1rem;
+      text-align: center;
+      color: #000 !important;
+      border-bottom: 1px #ccc solid;
+      margin-top: 0;
+    }
+
+  }
+ 
+form   p {
+  font-size: 0.8rem;
+  margin:0.5rem !important;
+  text-align: left !important;
+  color: rgb(189, 28, 28);
+  animation: pop_in 0.3s ease-in-out;
+}
+
+form{
+
+  h6{
+    text-align: left;
+    margin: 1rem 0;
+    color: #777;
+    font-weight: 600;
+  }
+
+  [type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+
+  margin-right: 1rem;
+    float: left;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #444;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: rgb(24, 54, 224);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+
+}
+
+
+
+
+@keyframes pop_in{
+  0%{
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  .login-img{
+    width: 75%;
+    margin: auto;
+  }
+  .vldform {
+      box-sizing: border-box;
+      max-width: 500px;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 2rem;
+      animation: a .5s;
+      animation-fill-mode: forwards;
+      border: #ebebeb 1px solid;
+      border-radius: 20px;
+      /* border-radius: 10px; */
+      box-shadow: 0 2px 6px 0 hsla(0, 0%, 43%, 0.2);
+      background-color: #fff;
+  }
+  
+  .vldform a {
+      text-decoration: none;
+      cursor: pointer;
+  }
+   .social-btn{
+     margin:1rem auto 0;
+     display: inline-block;
+  
+     img {margin:0.8rem 1.2rem;
+    width: 25px;
+  transition: 0.2s ease-in-out all;}
+  
+   }
+  
+  .vldform__textbox {
+    outline: none;
+    font-size: 1rem;
+        margin-top: 1.3rem;
+        padding-bottom: 8px;
+        width: 100%;
+        background: #061fad14;
+        padding: 0.8rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border:none;
+  }
+  
+  .vldform__textbox[type="password"]::after {
+      content: " ";
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: rebeccapurple;
+  }
+  .vldform__recoverypassword{
+      align-self: flex-end;
+      margin: 10px 0px;
+      font-size: 16px;
+      color: #2E67A9;
+  }
+  
+  .vldform__button {
+      margin: 2rem auto 0.5rem;
+      height: 55px;
+      border: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+       border-radius: 10px;
+      background:#071FAD;
+      border: 1.5px solid transparent;
+      font-size: 22px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .vldform__button:hover{
+    border: 1.5px solid  #071FAD;
+    background: #fff;
+    color: #071FAD !important;
+  }
+  
+  .vldform__signup {
+      align-self: center;
+      margin-top: 10px;
+      margin-bottom: 0px;
+  }
+  
+  .vldform__signup a {
+      margin-left: 4px;
+      font-weight: 700;
+  }
+  
+  .vldreg {
+      display: flex;
+  }
+  
+  .vldrecpass {
+      display: none;
+  }
+  
+  @keyframes a {
+      0% {
+          opacity: 0;
+          transform: translateY(-5px)
+      }
+  
+      to {
+          opacity: 1;
+          transform: translateY(5px)
+      }
+  }
+  @media (max-width: 1091px) {
+    #login {
+      background-size: cover;
+    }
+  }
+  @media (max-width: 991px) {
+  
+      .vldform {
+          width: 550px;
+          margin: auto;
+      }
+
+      .login-img{
+        display:none;
+      }
+    
+      h2{
+        text-align: center !important;
+      }
+      .left-content{
+        text-align: center;
+      }
+
+      #login {
+        p{
+          margin: 1rem auto;
+        }
+       
+    
+        h2{
+          text-align: center;
+        }
+      }
+  }
+  @media (max-width: 576px) {
+  
+      .vldform {
+          width: 100%;
+          padding: 20px 40px;
+      }
+      #login{
+        margin-bottom: 0vh;
+        h2{
+          text-align: center;
+          font-size: 1.6rem;
+          letter-spacing: -1px;
+          margin-bottom: 2rem;
+          strong{
+            font-size: 2.2rem;
+            letter-spacing: -1.2px;
+          }
+        }
+      }
+      .form-box{
+        h1{
+          font-size: 2.5rem;
+          letter-spacing: -2px;
+        }
+      }
+      
+  }
+  
+  @media (max-width: 360px) {
+  
+      .vldform {
+          width: 100%;
+          padding: 20px 35px;
+      }
+  
+      .vldform__signup {
+          text-align: center;
+      }
+  
+      .vldform__signup a {
+          margin-left: 14px;
+      }
+  }
+

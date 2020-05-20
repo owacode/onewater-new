@@ -1,0 +1,429 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*-------------------------------------------
+--------------     GLOBAL STYLES-------------
+---------------------------------------------*/
+@import './assets/css/bootstrap.min.css';
+@import './commonstyles/blog-global-styles.scss';
+@import './commonstyles/landing-section-styles.scss';
+@import '../node_modules/modularscale-sass/stylesheets/modularscale';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus{
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+$modularscale: (
+  320px: (
+    base: 11px,
+    ratio: 1.2,
+  ),
+  380px: (
+    base: 14px,
+    ratio: 1.22,
+  ),
+  480px: (
+    base: 14px,
+    ratio: 1.22,
+  ),
+  768px: (
+    base: 15.4px,
+    ratio: 1.21,
+  ),
+  991px:(
+    base: 16px,
+    ratio: 1.21,
+    ),
+  1200px: (
+    base: 16px,
+    ratio: 1.21,
+  ),
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+/*headings styles*/
+h1{
+  @include ms-respond(font-size,6);
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  margin-top: 2.5rem;
+}
+h2{
+  @include ms-respond(font-size,4);
+  font-weight: 700;
+  letter-spacing: -0.09rem;
+  margin-top: 2.5rem;
+}
+h3{
+  @include ms-respond(font-size,3);
+  letter-spacing: -0.07rem;
+  margin-top: 2rem;
+}
+h4{
+  @include ms-respond(font-size,2);
+  letter-spacing: -0.05rem;
+  margin-top: 2rem;
+}
+h5{
+  @include ms-respond(font-size,1);
+  letter-spacing: -0.03rem;
+  margin-top: 1.5rem;
+}
+h6{
+  @include ms-respond(font-size,0);
+  letter-spacing: -0.01rem;
+}
+
+p {
+  @include ms-respond(font-size,0);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  transition: all ease-in-out 0.65s;
+  line-height: 1.75;
+}
+
+section{
+  position: relative;
+  padding:35px 0;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none !important;
+}
+a:hover {
+  color: #0C7BE2;
+  //color: #000c62;
+  text-decoration: none !important;
+}
+
+ul {
+  padding: 0;
+}
+
+a:visited,
+a:focus {
+  outline: none;
+}
+
+
+
+img {
+  width: 100%;
+}
+
+
+.my-container{
+  padding: 0 4vw;
+}
+
+button {
+  margin: auto;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: #101010;
+  font-size: 1.1rem;
+  width: auto;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #0000003b;
+  margin: auto;
+  text-transform: capitalize;
+  outline: 0 !important;
+}
+
+button:hover {
+  background-color: #101010;
+  border: 1.2px solid #101010;
+  //box-shadow: 2px 2px 8px 2px #8991a05c;
+  color: #fff;
+}
+.card-shadow{
+  box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
+}
+
+.card-border{
+  border:1px solid #ccc;
+}
+
+.hr{
+background: #ccc;
+margin: 1rem;}
+
+
+.section-head {
+  position: relative;
+  margin-bottom: 4rem;
+  z-index: 10;
+}
+
+.section-head h1 {
+  font-size: 3.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.section-head h1 span {
+  color: #275c84;
+}
+
+.content p {
+  position: relative;
+  color: #101010;
+  font-weight: 600;
+  line-height: 2rem;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.logout-button{
+  position: fixed;
+  top: 2vh;
+  right: 1vw;
+  z-index: 1000;
+  background: #ff6060;
+  color: #fff ;
+  transition: all 0.3s ease-in-out;
+}
+.logout-button:hover{
+  color: #ff6060 ;
+  background: #fff ;
+  border-color:#ff6060;
+}
+.button {
+  border: 1px solid transparent;
+  outline: none;
+  margin-top: 0;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+/*shared styles*/
+  
+.btn-loading-content{
+  display: none;
+}
+
+.reg-logo{
+  position: fixed;
+  top: 2vh;
+  left: 1vw;
+  z-index: 500;
+  img{
+    width: 100px;
+  }
+
+}
+
+.author-btn {
+  text-align: center;
+  margin: 30px 0 30px;
+  z-index: 10;
+  position: relative;
+
+  .reg-text {
+    padding: 75px 0;
+  }
+  background: #d6d5f2;
+  h3 {
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 2.6rem;
+    letter-spacing: -0.1rem;
+    color: #000c61;
+    font-weight: 700;
+  }
+  a {
+    text-align: center;
+    border-radius: 3px;
+    color: #000c61;
+    display: inline-block;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    background: #f9f9f9;
+    border: 1.5px solid #c9c9c9;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  a:hover {
+    color: #fff !important;
+    background: #246df8;
+    border: 1.5px solid #000c61;
+  }
+  img {
+    width: auto;
+    max-height: 220px;
+  }
+}
+
+.no-data{
+  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  width: 90%;
+  margin:1rem auto;
+  padding: 1rem;
+  border:1px solid #ccc;
+
+  img{
+    max-width: 70px;
+    height: auto !important;
+    filter: grayscale(1);
+  }
+  h4{
+    text-align: center;
+  }
+}
+
+.saved-text{
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 700;
+  display: none;
+  animation: pop_up 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.go-to-top-btn{
+  position: fixed;
+  z-index: 1000;
+  bottom: 1rem;
+  right: 1rem;
+  //display: none;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
+  padding: 10px;
+  background-color: #fff;
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover{
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pop_up{
+  0%{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .section-head {
+    margin: 1.5rem auto 3rem;
+    text-align: center;
+  }
+  section{
+    padding: 25px 0;
+  }
+  .content p {
+    width: 90%;
+    margin: auto;
+    line-height: 1.7rem;
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  section{
+    padding: 15px 0;
+  }
+  p{
+    text-align: center;
+  }
+  button::after {
+    display: none;
+  }
+  .reg-logo{
+    img{
+      width: 70px;
+    }
+  
+  }
+  .logout-button {
+    top:1vh;
+   right: 2vw;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+}
+  
+  .section-head {
+    margin-bottom: 3rem 0;
+  }
+
+  .section-head h1 {
+    font-size: 2.4rem;
+  }
+  .scroll-to-btn {
+    display: none;
+  }
+  .author-btn {
+  
+    .reg-text {
+      padding: 30px 0;
+    }
+  }
+  .blog-content{
+    p{
+      text-align: justify;
+    }
+  }
+}
+
+@media all and (max-width:360px){
+  p,h6{
+    @include ms-respond(font-size,0);
+  }
+
+}
+

@@ -1,0 +1,514 @@
+@import "./bg-blocks-styles.scss";
+@import "../landing-components.component.scss";
+@import '../../../commonstyles/modal-styles.scss';
+@import "../../../commonstyles/form-styles.scss";
+
+section {
+  //background: #2b5ada;
+  background: #092b86;
+}
+
+.modal-no-animate{
+  animation: none;
+}
+
+.about-section {
+  position: relative;
+  .about-img {
+    width: 85%;
+    margin: 1rem auto;
+  }
+  .about-content {
+    p {
+      color: #fff;
+    }
+  }
+}
+.platform-section {
+  position: relative;
+}
+.hero-section{
+  .heading {
+    h1{
+      font-size: 3.2rem;
+      letter-spacing: -0.09rem;
+      font-weight: 700;
+      span{
+        font-size: 2.5rem;
+      }
+  }
+  h3{
+    font-weight: 600;
+  }
+  }
+}
+
+.leaders-section{
+  background-image: linear-gradient(to bottom, #0000006e, #092b86);
+  h1{
+    text-align: left;
+  }
+}
+
+.small-text{
+  font-size: 1.5rem;
+  opacity: 0.9;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.platform-intro-img {
+  width: 50%;
+  position: relative;
+  margin: 2rem auto;
+}
+
+.platform-section {
+  position: relative;
+  background: linear-gradient(0deg, #092b86 6%, rgba(14, 73, 154, 0.850074) 53%, #092b86 94%),
+   url(/assets/img/landing/landing-features-bg.jpg);
+  background-size: cover;
+  background-position:top center;
+}
+
+
+
+.platforms {
+  position: relative;
+}
+
+.platform {
+  padding: 2rem 0;
+  color: #fff;
+  margin: 0 auto;
+  position: relative;
+
+  h2 {
+    margin: 2rem 0 1.5rem;
+  }
+}
+.platform-name {
+  font-size: 3.1rem;
+  letter-spacing: -2px;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+.platform-img {
+  margin: auto;
+  width: 80%;
+}
+.about-platform p {
+  font-weight: 500;
+  z-index: 20;
+  position: relative;
+}
+
+.feature-desc {
+  font-size: 0.95rembout;
+}
+.feature-block {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 1.5rem 0 0;
+  z-index: 2;
+  position: relative;
+}
+.feature-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 1rem auto;
+}
+
+.feature-icon {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 120px;
+  border: 4px solid #fff;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  align-items: center;
+  box-shadow: 0 0 20px 12px #0000001f;
+  svg {
+    height: 75px;
+    width: 75px;
+    color: #fff;
+  }
+}
+
+.call-to-action-section {
+  padding: 150px 0 180px;
+  position: relative;
+  overflow-y: visible;
+  //z-index: -1;
+  background: linear-gradient(
+      0deg,
+      #092b86 2%,
+      rgba(9, 43, 134, 0.77) 64%,
+      #092b86 94%
+    ),
+    url(/assets/img/landing/getstarted-bg.jpg);
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    margin-top: 40px;
+  }
+}
+
+.cta-img {
+  width: 150px;
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  margin: auto;
+}
+
+.mybtn {
+  
+  margin: 2rem auto 1rem;
+  position: relative;
+  z-index: 10;
+  a {
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    border: 1.5px solid #fff;
+    color: #fff;
+    font-weight: 600;
+  }
+  a:hover {
+    background: #fff;
+    color: #000c61;
+  }
+}
+
+.white-wave {
+  margin-top: -200px;
+  position: relative;
+}
+
+.partners {
+  .partner-heading{
+    text-transform: capitalize;
+    text-align: center;
+    color: #fff;
+  }
+
+  padding: 1rem 0;
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 45px;
+    margin: 1rem auto;
+    //filter: brightness(0) invert(1);
+  }
+}
+.short-logo{
+  height: 70px !important;max-height: 100px !important;
+}
+.tiny-logo{
+  height: 75px !important;max-height: 100px !important;
+}
+.outer-card{
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.49), 0 4px 6px -2px rgba(0, 0, 0, 0.76);
+  padding: 0.8rem;
+}
+.two-card{
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4{
+    margin: 0;
+  }
+
+  img{
+    border-radius: 0;
+  }
+}
+.news-img {
+  width: 70%;
+  z-index: 20;
+  position: relative;
+}
+.newsletter-section {
+  background: #092b86;
+  padding: 50px 0 50vh;
+  margin-bottom: -45vh;
+}
+.platform-section{
+  h2{
+    font-size: 2.5rem;
+    text-align: center;
+    
+  }
+}
+.cro-section,.mayor-section{
+  background-size: cover;
+  background-repeat: no-repeat;
+  blockquote{
+    margin: 3rem 0;
+    position: relative;
+    p{
+      font-size: 1.2rem;
+    line-height: 2;
+    font-style: italic;
+    font-weight: 400;
+    }
+
+    i{
+      color: #fff;
+      position: absolute;
+      font-size: 5rem;
+      opacity: 0.15;
+      top: -2rem;
+    }
+  }
+}
+
+.become-member{
+  .img{
+    max-width: 350px;
+    width: 90%;
+  }
+  h1{
+    margin-bottom: 3rem;
+  }
+  h5{
+    max-width: 350px;
+    color: #fff;
+    margin:1rem auto;
+  }
+  .mybtn{
+    width: 350px;
+  }
+}
+
+.features-section-p {
+  // background: linear-gradient(180deg, #092b86  2%, #173997c4 80%, #092b86), url(/assets/img/landing/landing-features-bg.jpg);
+  // background-position: top center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // margin-top: 0;
+  // padding-bottom: 61vh;
+  // margin-bottom: -56vh;
+
+  .col-md-3{
+    padding: 0;
+  }
+
+  .feature-card{
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border: 2px solid #fff;
+    transition: all 0.3s ease-in-out;
+
+    h3,a{
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.feature-card:hover{
+    background-color: #fff;
+
+    h3,p{
+      color: #092b86;
+    }
+
+}
+
+.drop-img{
+  max-width: 250px;
+  margin: auto;
+}
+}
+
+.mayor-section{
+  background-image: linear-gradient(to bottom, #092b86 2%, rgba(9, 43, 134, 1) 64%, #092b86 94%), url(/assets/img/landing/mayor-bg.jpg);
+  background-position: top right;
+  h1{
+    text-align: left;
+  }
+  blockquote{
+    margin: 4rem 0;
+
+    i{
+      left: 0;
+    }
+  }
+}
+.cro-section{
+  background-image: linear-gradient(to bottom, #092b86  2%, rgba(9, 43, 134, 1) 64%, #092b86 94%), url(/assets/img/landing/cro-bg.jpg);
+  background-position: top left;
+  text-align: right;
+  h1{
+    text-align: right;
+  }
+blockquote{
+  i{
+    right: 0;
+  }
+}
+}
+
+.donation-section {
+  padding: 50px 0 100px;
+  h4 {
+    text-align: center;
+    margin: auto;
+    max-width: 500px;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  background: rgb(9, 43, 134);
+  background: linear-gradient(
+    0deg,
+    rgba(9, 43, 134, 1) 5%,
+    rgba(9, 42, 134, 0.945) 45%,
+    rgba(9, 43, 134, 1) 86%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.donate-img {
+  max-width: 500px;
+  margin: 2.5rem auto;
+}
+
+
+.vldform__textbox {
+  outline: none;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  padding-bottom: 8px;
+  width: 100%;
+  background: #061fad14;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: none;
+}
+.partners-section{
+  padding-bottom: 25rem;
+  margin-bottom: -28rem;
+}
+
+@media all and (max-width: 991px) {
+  .platform-img {
+    width: 60%;
+  }
+  .platform{
+    margin: 1rem 0;
+  }
+  .platform-intro-img{
+    width: 70%;
+  }
+  .platform-section{
+   
+    h2{
+      font-size: 2rem;
+      text-align: center;
+      
+    }
+  }
+  .mybtn{
+    max-width: 400px;
+    text-align: center;
+  }
+  .newsletter-section {
+    padding: 50px 0 50vh;
+    margin-bottom: -50vh;
+    p,
+    h2 {
+      text-align: center;
+    }
+  }
+  .news-img-wrap {
+    text-align: center;
+    margin: 1rem;
+  }
+  .call-to-action-section {
+    padding: 120px 0 80px;
+  }
+  .cta-img {
+    width: 120px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .feature-name {
+    font-size: 1.2rem;
+  }
+  .partners-section{
+    margin-bottom: -22rem;
+  }
+  .platform-section{
+   
+    h2{
+      font-size: 1.5rem;
+      letter-spacing: -0.05rem;
+      
+    }
+  }
+  .about-platform p {
+    text-align: justify;
+  }
+  .mybtn a{
+    margin: 0.6rem 0;
+  }
+  .platform-intro-img {
+    width: 100%;
+  }
+  .outer-card{
+    padding: 0.4rem;
+  }
+  .partners-section {
+    padding-top: 40px;
+}
+  .platform {
+    padding: 1rem 0;
+
+    ul{
+      padding:0 1rem;
+    }
+  }
+  .platform-img {
+    margin: auto;
+    width: 100%;
+  }
+  .news-img {
+    width: 100%;
+    margin: 3rem auto;
+  }
+  .newsletter-section p {
+    text-align: center;
+  }
+  .call-to-action-section {
+    padding: 150px 0 25px;
+  }
+  .cta-img {
+    width: 80px;
+  }
+  .newsletter-section {
+    margin-bottom: -40vh;
+  }
+  .partners {
+    padding:0;
+  }
+  .features-section-p{
+    padding-top: 40px;
+  }
+}
