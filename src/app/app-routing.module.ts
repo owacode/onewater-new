@@ -45,7 +45,10 @@ const routes: Routes = [
         path: 'privacy-policy',
         loadChildren: './landing-components/privacy-policy/privacy-policy.module#PrivacyPolicyModule'
       },
-      
+      {
+        path: 'our-partners',
+        loadChildren: './landing-components/our-partners/our-partners.module#OurPartnersModule'
+      },
     ]
   },
 
