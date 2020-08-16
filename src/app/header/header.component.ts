@@ -107,7 +107,7 @@ toggleHeader() {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{ status: string}>('https://onewater-blogapi.herokuapp.com/subscribe',this.form.value)
+    this.http.post<{ status: string}>('https://onewateracademy.org/api/blog/subscribe',this.form.value)
     .subscribe(result=>{
       if(result.status == "error"){
         //console.log(result,'already suscribed');
@@ -127,7 +127,7 @@ toggleHeader() {
     })
   }
   // login() {
-  //   this.http.get('https://onewater-instructor-api.herokuapp.com')
+  //   this.http.get('https://onewateracademy.org/api/instructor')
   //     .subscribe(result => {
   //       //console.log(result);
   //     })

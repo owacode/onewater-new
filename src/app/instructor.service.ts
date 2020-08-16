@@ -35,14 +35,14 @@ export class InstructorService {
 
   registerInstructor(values) {
     return this.http.post(
-      "https://onewater-instructor-api.herokuapp.com/register-instructor",
+      "https://onewateracademy.org/api/instructor/register-instructor",
       values
     );
   }
 
   registerInstructorForDrawing(values) {
     return this.http.post(
-      "https://onewater-instructor-api.herokuapp.com/register-drawing",
+      "https://onewateracademy.org/api/instructor/register-drawing",
       values
     );
   }

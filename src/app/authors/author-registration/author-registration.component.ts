@@ -32,7 +32,7 @@ export class AuthorRegistrationComponent implements OnInit {
     // if (localStorage.getItem("form_filled_job") == "true") {
     //   this.http
     //     .get<{ status: string; msg: string; result: any }>(
-    //       "https://onewater-blogapi.herokuapp.com/notauthor/" +
+    //       "https://onewateracademy.org/api/blog/notauthor/" +
     //         localStorage.getItem("authorid")
     //     )
     //     .subscribe(result => {

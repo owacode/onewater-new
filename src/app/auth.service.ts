@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: "root",
 })
+
 export class AuthService {
   isLoggedIn: boolean = false;
   access_token = null;
@@ -42,12 +43,12 @@ export class AuthService {
       msg: string;
       payload: string;
       result: any;
-    }>("https://onewater-blogapi.herokuapp.com/login", user);
+    }>("https://onewateracademy.org/api/blog/login", user);
   }
 
   resetpassword(values) {
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/reset-password",
+      "https://onewateracademy.org/api/blog/reset-password",
       values
     );
   }
