@@ -49,6 +49,14 @@ const routes: Routes = [
         path: 'our-partners',
         loadChildren: './landing-components/our-partners/our-partners.module#OurPartnersModule'
       },
+      {
+        path: 'pricing',
+        loadChildren: './landing-components/pricing/pricing.module#PricingModule'
+      },
+      {
+        path: 'our-journey',
+        loadChildren: './landing-components/our-journey/our-journey.module#OurJourneyModule'
+      },
     ]
   },
 
