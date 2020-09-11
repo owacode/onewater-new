@@ -238,6 +238,28 @@ margin: 1rem;}
 .btn-loading-content{
   display: none;
 }
+.btn-white{
+  font-size: 2rem;
+  color: #101010;
+  font-size: 1.1rem;
+  width: auto;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #0000003b;
+  display: inline-block;
+
+  &:hover{
+    color: #fff;
+    border-color: #101010;
+    background-color: #101010;
+  }
+}
+
+
 
 .reg-logo{
   position: fixed;
@@ -249,7 +271,9 @@ margin: 1rem;}
   }
 
 }
-
+.text-600{
+  font-weight: 600 !important;
+}
 .author-btn {
   text-align: center;
   margin: 30px 0 30px;

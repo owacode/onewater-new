@@ -26,12 +26,14 @@ const routes: Routes = [
         path: 'give',
         loadChildren: './landing-components/donation/donation.module#DonationModule'
       },
-    
       {
         path: 'team',
         loadChildren: './landing-components/team/team.module#TeamModule'
       },
-     
+      {
+        path: 'onewater-guru',
+        loadChildren: './landing-components/ow-guru/ow-guru.module#OwGuruModule'
+      },
       {
         path: 'learningacademy',
         loadChildren: './landing-components/ow-academy/ow-academy.module#OwAcademyModule'
@@ -145,11 +147,11 @@ const routes: Routes = [
     path: 'recover-password/:token',
     loadChildren: './recover-password/recover-password.module#RecoverPasswordModule'
   },
-  {
+ /* {
     path: '**',
     redirectTo: '/',
     pathMatch: 'full'
-  }
+  }*/
 ];
 
 @NgModule({
