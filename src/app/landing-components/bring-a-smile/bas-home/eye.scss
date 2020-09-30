@@ -1,0 +1,25 @@
+
+#main-ctr {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .content {
+    border: 1px solid black;
+    display: inline-block;
+    position: relative;
+  }
+  
+  svg {
+    //@include transform(scale(.5));
+    transform: scale(0.5);
+    #smile-up,
+    #circle,
+    #eye-to-left,
+    #eye-to-right,
+    #wink,
+    #bg {
+      visibility: hidden;
+    }
+  }

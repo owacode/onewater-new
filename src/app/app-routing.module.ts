@@ -59,6 +59,12 @@ const routes: Routes = [
         path: 'our-journey',
         loadChildren: './landing-components/our-journey/our-journey.module#OurJourneyModule'
       },
+
+      //BRING A SMILE
+      {
+        path: 'owa-bas',
+        loadChildren: './landing-components/bring-a-smile/bas-home/bas-home.module#BasHomeModule'
+      },
     ]
   },
 

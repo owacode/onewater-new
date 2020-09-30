@@ -1,0 +1,51 @@
+@import './shared-styles.scss';
+@import './eye.scss';
+
+.hero-section{
+    background: linear-gradient(to bottom, #000, transparent), url(/assets/img/768.jpg);
+    background-size: cover;
+    background-position:top center;
+    min-height: 800px;
+    position: relative;
+    align-items: flex-start;
+    padding-top: 16vh;
+    .wave-absolute{
+       width: 100%;
+       position: absolute;
+       left: 0;
+       bottom: 0;
+    }
+}
+
+.smile{
+    width: 8rem;
+}
+.bg-img{
+    position: relative;
+    img{
+        border-radius: 2rem;
+        z-index: 5;
+        position: relative;
+    }
+    &-shape{
+        position: absolute;
+        width: 16rem;
+        height: 16rem;
+        right: 0;
+        transform: translate(50%,-50%);
+        z-index: 0;
+        background-color: #00000018;
+        border-radius: 50%;
+    }
+}
+
+.mv-box{
+    background-color: #e1e2ff;
+    border-radius: 3rem;
+    padding: 2rem 3rem;
+    text-align: center;
+    margin: 2rem 0 0;
+    img{
+        margin: 1.5rem 0;
+    }
+}
