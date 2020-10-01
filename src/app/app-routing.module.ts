@@ -65,6 +65,30 @@ const routes: Routes = [
         path: 'owa-bas',
         loadChildren: './landing-components/bring-a-smile/bas-home/bas-home.module#BasHomeModule'
       },
+      {
+        path: 'owa-bas/boards/indian',
+        loadChildren: './landing-components/bring-a-smile/boards/indian-board/indian-board.module#IndianBoardModule'
+      },
+      {
+        path: 'owa-bas/boards/american',
+        loadChildren: './landing-components/bring-a-smile/boards/american-board/american-board.module#AmericanBoardModule'
+      },
+      {
+        path: 'owa-bas/boards/canadian',
+        loadChildren: './landing-components/bring-a-smile/boards/canadian-board/canadian-board.module#CanadianBoardModule'
+      },
+      {
+        path: 'owa-bas/chapters/indore',
+        loadChildren: './landing-components/bring-a-smile/chapters/indore-chapter/indore-chapter.module#IndoreChapterModule'
+      },
+      {
+        path: 'owa-bas/chapters/hyderabad',
+        loadChildren: './landing-components/bring-a-smile/chapters/hyderabad-chapter/hyderabad-chapter.module#HyderabadChapterModule'
+      },
+      {
+        path: 'owa-bas/chapters/agartala',
+        loadChildren: './landing-components/bring-a-smile/chapters/agartala-chapter/agartala-chapter.module#AgartalaChapterModule'
+      }
     ]
   },
 

@@ -1,0 +1,25 @@
+@import '../shared-styles.scss';
+
+.chapter{
+    &-hero{
+        min-height: 800px;
+        display: flex;
+        align-items: center;
+    }
+    &-h1{
+        font-size: 4.6rem;
+        margin-top: 0.4rem;
+        letter-spacing: -0.25rem;
+    }
+}
+
+.img-grid{
+    height: 15rem;
+    overflow: hidden;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
