@@ -1,15 +1,81 @@
 @import '../shared-styles.scss';
+@import 'mixins';
 
 .chapter{
     &-hero{
-        min-height: 800px;
-        display: flex;
-        align-items: center;
+        min-height: 600px;
+        padding-top: 12rem;
+        background-color: #e1e2ff;
+
+        @include res(md){
+            padding-top: 15vh;
+        }
+        &-img{
+            position: relative;
+            height: 20rem;
+
+            @include res(md){
+                max-width: 30rem;
+                margin: auto;
+                margin-bottom: 2rem;
+            }
+            
+           img{
+            height: 100%;
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            object-fit: cover;
+            position: relative;
+            z-index: 5;
+           }  
+
+           &::after{
+               content:"";
+               height: 85%;
+               width: 85%;
+               background-image: url(/assets/img/bas/blob.svg);
+               position: absolute;
+               top: 0;
+               left: 0;
+               background-repeat: no-repeat;
+               transform: translate(-20%,40%);
+               opacity: 0.1;
+           }
+           &::before{
+            content:"";
+            height: 85%;
+            width: 85%;
+            background-image: url(/assets/img/bas/blob-2.svg);
+            position: absolute;
+            transform: rotate(180deg);
+            top: 0;
+            right: 0;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transform: translate(60%,-40%);
+        }
+        }
     }
     &-h1{
-        font-size: 4.6rem;
+        font-size: 4.2rem;
         margin-top: 0.4rem;
-        letter-spacing: -0.25rem;
+        letter-spacing: -0.3rem;
+
+        @include res(lg){
+            font-size: 3.6rem;
+            letter-spacing: -0.24rem;
+        }
+
+        @include res(sm){
+            font-size: 3.2rem;
+            letter-spacing: -0.2rem;
+        }
+        @include res(xs){
+            font-size: 2.8rem;
+            letter-spacing: -0.16rem;
+        }
     }
 }
 
@@ -21,5 +87,17 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+    }
+}
+.translate-up{
+    @include res(xs){
+        transform: translateY(0);
+    }
+}
+.wave-img{
+    margin-top: -5rem;
+
+    @include res(md){
+        margin-top: -2rem;
     }
 }

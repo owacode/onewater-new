@@ -4,9 +4,10 @@
 --------------     GLOBAL STYLES-------------
 ---------------------------------------------*/
 @import './assets/css/bootstrap.min.css';
-@import './commonstyles/blog-global-styles.scss';
-@import './commonstyles/landing-section-styles.scss';
 @import '../node_modules/modularscale-sass/stylesheets/modularscale';
+@import 'blog-global-styles.scss';
+@import 'landing-section-styles.scss';
+@import 'mixins';
 
 *{
   margin: 0;
@@ -188,6 +189,10 @@ margin: 1rem;}
 }
 .img-1{
   position: relative;
+@include res(sm){
+  margin-top: 0.75rem;
+
+}
   img{
       border-radius: 0.6rem;
       box-shadow: 4px 4px 25px 8px rgba(0, 0, 0, 0.219);
