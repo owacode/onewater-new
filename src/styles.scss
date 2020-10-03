@@ -263,19 +263,26 @@ margin: 1rem;}
 .btn-loading-content{
   display: none;
 }
-.btn-white{
-  font-size: 2rem;
-  color: #101010;
+
+.btn-white, .btn-dark{
   font-size: 1.1rem;
   width: auto;
   cursor: pointer;
-  background: #fff;
-  transition: all 0.2s ease-in-out;
   font-weight: 700;
   padding: 12px 16px;
   border-radius: 8px;
-  border: 1.5px solid #0000003b;
   display: inline-block;
+  transition: all 0.2s ease-in-out;
+
+  @include res(xs){
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+.btn-white{
+  color: #101010;
+  background: #fff;
+  border: 1.5px solid #0000003b;
 
   &:hover{
     color: #fff;
@@ -283,8 +290,21 @@ margin: 1rem;}
     background-color: #101010;
   }
 }
+.btn-dark{
+  color: #fff;
+  background: #101010;
+  border: 1.5px solid transparent;
 
-
+  &:hover{
+    color: #101010;
+    border-color: #0000003b;
+    background-color: #fff;
+  }
+}
+.btn-sm{
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
 
 .reg-logo{
   position: fixed;

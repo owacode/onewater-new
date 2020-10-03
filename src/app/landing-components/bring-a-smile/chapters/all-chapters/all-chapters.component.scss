@@ -1,0 +1,26 @@
+@import '../chapters';
+@import 'mixins';
+
+.introduction{
+    padding-top:7rem;
+
+    @include res(lg){
+        padding-top: 8rem;
+    }
+
+    @include res(md){
+        padding-top: 10vh;
+    }
+
+    @include res(sm){
+        padding-top: 8vh;
+    }
+}
+
+.working-box{
+    margin: 2rem 0;
+
+    @include res(sm){
+        margin: 1rem 0;
+    }
+}

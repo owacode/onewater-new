@@ -1,8 +1,75 @@
 @import '../board';
-
 .board{
     &-hero{
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.932)), url(/assets/img/bas/indian-bg.jpg);
-    
-    } 
+       padding:5vh 0;
+    }
+}
+.circle{
+    &-1{
+        top: 0;
+        left: 0;
+        @include dimension(30rem);
+        filter: blur(20rem);
+        background-color: #ffd0a5;
+    }
+
+    &-2{
+        bottom: 0;
+        right:0;
+        width: 100%;
+        @include dimension(15rem);
+        filter: blur(5rem);
+        transform: translate(-10%,0%);
+        background-color: #ceeaff;
+    }
+
+    &-3{
+        top: 0;
+        right: 0;
+        filter: blur(13rem);
+        @include dimension(20rem);
+        transform: translate(10%,0%);
+        background-color: #ffb9ad;
+    }
+
+    &-4{
+        bottom: 0;
+        left: 0;
+        filter: blur(10rem);
+        @include dimension(15rem);
+        transform: translate(10%,0%);
+        background-color: #ffd0a5;
+    }
+}
+.mandala{
+    position: absolute;
+    width: 22rem;
+    z-index: 2;
+
+    @include res(sm){
+        width: 30vw;
+    }
+    @include res(xs){
+        width: 40vw;
+    }
+    &-left{
+        left: 0;
+        top: 0;
+        transform: translate(-50%,-50%);
+    }
+    &-right{
+        right: 0;
+        bottom: 0;
+        transform: translate(50%,50%);
+    }
+    &-top{
+        right: 0;
+        top: 0;
+        transform: translate(50%,-50%);
+    }
+    &-bottom{
+        left: 0;
+        bottom: 0;
+        transform: translate(-50%,50%);
+    }
 }

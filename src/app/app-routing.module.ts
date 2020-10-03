@@ -78,6 +78,10 @@ const routes: Routes = [
         loadChildren: './landing-components/bring-a-smile/boards/canadian-board/canadian-board.module#CanadianBoardModule'
       },
       {
+        path: 'owa-bas/chapters',
+        loadChildren: './landing-components/bring-a-smile/chapters/all-chapters/all-chapters.module#AllChaptersModule'
+      },
+      {
         path: 'owa-bas/chapters/indore',
         loadChildren: './landing-components/bring-a-smile/chapters/indore-chapter/indore-chapter.module#IndoreChapterModule'
       },

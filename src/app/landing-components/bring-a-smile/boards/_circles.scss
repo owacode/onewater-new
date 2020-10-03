@@ -1,0 +1,12 @@
+@mixin dimension($size){
+    width: $size;
+    height: $size;
+}
+
+.circle{
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    
+}
+

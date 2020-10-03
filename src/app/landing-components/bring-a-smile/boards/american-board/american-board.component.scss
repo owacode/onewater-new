@@ -1,8 +1,29 @@
 @import '../board';
 
-.board{
-    &-hero{
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0.932)), url(/assets/img/bas/american-bg.jpg);
-  
-    } 
+.circle{
+    &-1{
+        top: 0;
+        left: 0;
+        @include dimension(30rem);
+        filter: blur(20rem);
+        background-color: #bf0a316c ;
+    }
+
+    &-2{
+        top: 70%;
+        right:0;
+        @include dimension(15rem);
+        filter: blur(10rem);
+        transform: translate(-10%,0%);
+        background-color: #0028682f;
+    }
+
+    &-3{
+        top: 0;
+        right: 0;
+        @include dimension(10rem);
+        filter: blur(8rem);
+        transform: translate(-40%,-10%);
+        background-color: #9eb4ff;
+    }
 }
