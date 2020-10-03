@@ -43,7 +43,7 @@
     }
 
     &-img{
-        max-height: 28rem;
+        max-height: 60vh;
         width: auto;
         max-width: 100%;
     }
@@ -61,11 +61,11 @@
     }
     @include res(sm){
       font-size: 3rem;
-      letter-spacing: -0.1rem;
+      letter-spacing: -0.14rem;
     }
     @include res(xs){
       font-size: 2.5rem;
-      letter-spacing: -0.05rem;
+      letter-spacing: -0.13rem;
     }
   }
   &-h2 {
