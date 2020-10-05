@@ -9,38 +9,30 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    height: calc(100vh - 7rem);
+    height: 100vh;
     max-height: 800px;
-    margin: 5rem 2rem 2rem;
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
     overflow: hidden;
-    background-attachment: fixed;
-    backdrop-filter: blur(5rem);
-    @include res(lg){
-      margin: 4rem 2vw 1rem;
-      height: calc(100vh - 5rem);
-    }
-    @include res(sm){
-      margin: 4rem 3vw 1rem;
-    }
+    //background-attachment: fixed;
+    //backdrop-filter: blur(5rem);
 
     .container{
       position: relative;
       z-index: 10;
     }
 
-    &-overlay{
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      backdrop-filter: blur(20rem);
-      pointer-events: none;
-      z-index: 1;
-    }
+    // &-overlay{
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   height: 100%;
+    //   width: 100%;
+    //   backdrop-filter: blur(20rem);
+    //   pointer-events: none;
+    //   z-index: 1;
+    // }
 
     &-img{
         max-height: 60vh;

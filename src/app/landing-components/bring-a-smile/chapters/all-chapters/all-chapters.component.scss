@@ -16,7 +16,19 @@
         padding-top: 8vh;
     }
 }
+.img-grid{
+    background-color: #fff3d9;
+    display: flex;
+    align-items: center;
+    box-shadow: none !important;
+    border: 1.2px solid #430c1da6;
+    justify-content: center;
 
+    img{
+        width: 75%;
+        object-fit: contain;
+    }
+}
 .working-box{
     margin: 2rem 0;
 

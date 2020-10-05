@@ -32,7 +32,8 @@ toggleHeader() {
         event['url'].includes('/instructor/') ||
         event['url'].includes('/onewater-guru') ||
         event['url'].includes('/owa-bas/boards') ||
-        event['url'].includes('/owa-bas/chapters') ||
+        event['url'] == '/owa-bas/chapters' ||
+        //event['url'].includes('/owa-bas/chapters/') ||
         event['url'].includes('/onewaterblog/category') ||
         event['url'].includes('/onewatertalks/video-category')) {
         $('header').addClass('black-header');

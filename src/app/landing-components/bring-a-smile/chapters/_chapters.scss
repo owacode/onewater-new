@@ -5,64 +5,86 @@
     &-hero{
         min-height: 600px;
         padding-top: 12rem;
-        background-color: #e1e2ff;
+        background-color: #03256C;   //e1e2ff;
 
         @include res(md){
             padding-top: 15vh;
         }
         &-img{
+            //height: 20rem;
+            padding: 1.2rem;
+            background-color: #fff3d9;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 1rem;
             position: relative;
-            height: 20rem;
-
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             @include res(md){
                 max-width: 30rem;
                 margin: auto;
                 margin-bottom: 2rem;
+                padding: 1rem;
+            }
+
+            @include res(sm){
+                padding: 2vw;
             }
             
            img{
-            height: 100%;
-            width: 100%;
-            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            object-fit: cover;
-            position: relative;
-            z-index: 5;
+            object-fit: contain;
            }  
 
+           &-wrapper{
+            position: relative;
            &::after{
-               content:"";
-               height: 85%;
-               width: 85%;
-               background-image: url(/assets/img/bas/blob.svg);
-               position: absolute;
-               top: 0;
-               left: 0;
-               background-repeat: no-repeat;
-               transform: translate(-20%,40%);
-               opacity: 0.1;
-           }
-           &::before{
             content:"";
             height: 85%;
             width: 85%;
-            background-image: url(/assets/img/bas/blob-2.svg);
+            background-image: url(/assets/img/bas/blob.svg);
             position: absolute;
-            transform: rotate(180deg);
             top: 0;
-            right: 0;
+            left: 0;
             background-repeat: no-repeat;
-            opacity: 0.8;
-            transform: translate(60%,-40%);
+            transform: translate(-20%,40%);
+            opacity: 1;
+            z-index: 1;
         }
+        &::before{
+         content:"";
+         height: 85%;
+         width: 85%;
+         background-image: url(/assets/img/bas/blob-2.svg);
+         position: absolute;
+         transform: rotate(180deg);
+         top: 0;
+         right: 0;
+         background-repeat: no-repeat;
+         opacity: 0.8;
+         z-index: 1;
+         transform: translate(60%,-40%);
+     }
         }
+
+        }
+
+      
+
+        
+    p{
+        color: #fff;
+    }
+    h3{
+        color: #fff3d9;
+    }
     }
     &-h1{
         font-size: 4.2rem;
         margin-top: 0.4rem;
         letter-spacing: -0.3rem;
-
+        color: #fff;
         @include res(lg){
             font-size: 3.6rem;
             letter-spacing: -0.24rem;
@@ -77,6 +99,7 @@
             letter-spacing: -0.16rem;
         }
     }
+
 }
 
 .img-grid{
@@ -98,6 +121,6 @@
     margin-top: -5rem;
 
     @include res(md){
-        margin-top: -2rem;
+        margin-top: 0rem;
     }
 }

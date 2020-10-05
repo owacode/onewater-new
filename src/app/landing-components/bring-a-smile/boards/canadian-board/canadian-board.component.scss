@@ -2,27 +2,27 @@
 
 .circle{
     &-1{
-        top: 0;
+        top: 20%;
         left: 0;
         @include dimension(25rem);
         filter: blur(20rem);
-        background-color: #ffac97 ;
+        background-color: #ff8a6c ;
     }
 
     &-2{
-        top: 70%;
+        bottom: 0;
         right:0;
         @include dimension(15rem);
-        filter: blur(10rem);
+        filter: blur(18rem);
         transform: translate(-10%,0%);
-        background-color: #befff6;
+        background-color: #b78aff;
     }
 
     &-3{
         top: 0;
         right: 0;
-        @include dimension(5rem);
-        filter: blur(4rem);
+        @include dimension(8rem);
+        filter: blur(8rem);
         transform: translate(-40%,-10%);
         background-color: #b5c9ff;
     }

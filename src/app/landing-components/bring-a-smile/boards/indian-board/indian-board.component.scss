@@ -18,7 +18,7 @@
         right:0;
         width: 100%;
         @include dimension(15rem);
-        filter: blur(5rem);
+        filter: blur(8rem);
         transform: translate(-10%,0%);
         background-color: #ceeaff;
     }
@@ -35,41 +35,31 @@
     &-4{
         bottom: 0;
         left: 0;
-        filter: blur(10rem);
-        @include dimension(15rem);
-        transform: translate(10%,0%);
-        background-color: #ffd0a5;
+        filter: blur(50rem);
+        @include dimension(25rem);
+        transform: translate(20%,0%);
+        background-color: #ffbc7d;
     }
 }
 .mandala{
     position: absolute;
-    width: 22rem;
+    width: 15rem;
     z-index: 2;
 
-    @include res(sm){
-        width: 30vw;
+    @include res(md){
+        width: 20vw;
     }
     @include res(xs){
-        width: 40vw;
-    }
-    &-left{
-        left: 0;
-        top: 0;
-        transform: translate(-50%,-50%);
+        width: 25vw;
     }
     &-right{
         right: 0;
         bottom: 0;
-        transform: translate(50%,50%);
-    }
-    &-top{
-        right: 0;
-        top: 0;
-        transform: translate(50%,-50%);
+        //transform: translate(50%,50%);
     }
     &-bottom{
         left: 0;
         bottom: 0;
-        transform: translate(-50%,50%);
+       // transform: translate(-50%,50%);
     }
 }
