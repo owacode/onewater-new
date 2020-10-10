@@ -40,22 +40,20 @@
 
 .working {
   &-box {
-    margin-top: 4rem;
-    display: flex;
-    align-items: center;
-
     @include res(md) {
       margin: 1rem 0;
     }
   }
 
   &-card {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.4rem;
+    margin: auto;
 
     box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
     img {
@@ -63,16 +61,11 @@
     }
   }
   &-content {
-    flex: 1;
-    padding-left: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
 
     h4 {
       font-weight: 600;
-    }
-    h2,
-    h4,
-    p {
-      text-align: left;
     }
   }
 }

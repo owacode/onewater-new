@@ -47,6 +47,26 @@
     }
 }
 
+.numbers{
+    padding-bottom: 1rem;
+    margin-top: 1.2rem;
+    border-bottom: 1px solid #e1e2ff;
+    .head{
+        color: #202020;
+        margin-bottom: 4px;
+    }
+
+    &-container{
+        margin-top: 4rem;
+        @include res(md){
+            margin-top: 2rem;        }
+    }
+
+    @include res(md){
+        text-align: center;
+    }
+}
+
 .mv-box{
     background-color: #e1e2ff;
     border-radius: 3rem;
