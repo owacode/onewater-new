@@ -92,6 +92,10 @@ const routes: Routes = [
       {
         path: 'owa-bas/chapters/agartala',
         loadChildren: './landing-components/bring-a-smile/chapters/agartala-chapter/agartala-chapter.module#AgartalaChapterModule'
+      },
+      {
+        path: 'owa-bas/chapters/lucknow',
+        loadChildren: './landing-components/bring-a-smile/chapters/lucknow-chapter/lucknow-chapter.module#LucknowChapterModule'
       }
     ]
   },
