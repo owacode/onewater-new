@@ -231,7 +231,153 @@
     </div>
   </div>
 </section>
+<section class="story-section">
+  <div class="container">
+    <h2 class="text-center">
+      Our <span class="text-blue">Story</span> 
+    </h2>
 
+    <div class="story-block text-center">
+      <div class="story-tab-row">
+        <div class="story-tab" [class.active]="tab == 0" (click)="changeTab(0)">
+          2016
+        </div>
+        <div class="story-tab" [class.active]="tab == 1" (click)="changeTab(1)">
+          2017
+        </div>
+        <div class="story-tab" [class.active]="tab == 2" (click)="changeTab(2)">
+          2018
+        </div>
+        <div class="story-tab" [class.active]="tab == 3" (click)="changeTab(3)">
+          2019
+        </div>
+        <div class="story-tab" [class.active]="tab == 4" (click)="changeTab(4)">
+          2020
+        </div>
+      </div>
+
+      <div class="story--content-container" [ngSwitch]="tab">
+       
+          <div class="story-content" *ngSwitchCase="0">
+            <div class="story-text">
+              <h4>
+                About the story
+              </h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ipsum quia sint fuga natus deleniti magni veniam id animi quibusdam, et laborum officia. Nobis necessitatibus saepe, quae amet voluptate unde ad. Saepe amet ab voluptatem, repellat alias nulla. Architecto quis, nesciunt non sunt minus ullam commodi ipsum nihil consectetur. Illo.
+              </p>
+            </div>
+            <div class="story-carousel">
+              <owl-carousel
+              [items]="currentImages"
+              [options]="carouselOptions"
+              [carouselClasses]="['owl-theme', 'row', 'sliding']"
+            >
+              <div class="item" *ngFor="let img of currentImages;let i = index">
+                <div class="img-grid shadow">
+                  <img [src]="img.src" (click)="open(i)" />
+                </div>
+              </div>
+            </owl-carousel>
+            </div>
+          </div>
+          <div class="story-content" *ngSwitchCase="1">
+            <div class="story-text">
+              <h4>
+                About the story
+              </h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ipsum quia sint fuga natus deleniti magni veniam id animi quibusdam, et laborum officia. Nobis necessitatibus saepe, quae amet voluptate unde ad. Saepe amet ab voluptatem, repellat alias nulla. Architecto quis, nesciunt non sunt minus ullam commodi ipsum nihil consectetur. Illo.
+              </p>
+            </div>
+            <div class="story-carousel">
+              <owl-carousel
+              [items]="currentImages"
+              [options]="carouselOptions"
+              [carouselClasses]="['owl-theme', 'row', 'sliding']"
+            >
+              <div class="item" *ngFor="let img of currentImages;let i = index">
+                <div class="img-grid shadow">
+                  <img [src]="img.src" (click)="open(i)"/>
+                </div>
+              </div>
+            </owl-carousel>
+            </div>
+          </div>
+          <div class="story-content" *ngSwitchCase="2">
+            <div class="story-text">
+              <h4>
+                About the story
+              </h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ipsum quia sint fuga natus deleniti magni veniam id animi quibusdam, et laborum officia. Nobis necessitatibus saepe, quae amet voluptate unde ad. Saepe amet ab voluptatem, repellat alias nulla. Architecto quis, nesciunt non sunt minus ullam commodi ipsum nihil consectetur. Illo.
+              </p>
+            </div>
+            <div class="story-carousel">
+              <owl-carousel
+              [items]="currentImages"
+              [options]="carouselOptions"
+              [carouselClasses]="['owl-theme', 'row', 'sliding']"
+            >
+              <div class="item" *ngFor="let img of currentImages;let i = index">
+                <div class="img-grid shadow">
+                  <img [src]="img.src" (click)="open(i)"/>
+                </div>
+              </div>
+            </owl-carousel>
+            </div>
+          </div>
+          <div class="story-content" *ngSwitchCase="3">
+            <div class="story-text">
+              <h4>
+                About the story
+              </h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ipsum quia sint fuga natus deleniti magni veniam id animi quibusdam, et laborum officia. Nobis necessitatibus saepe, quae amet voluptate unde ad. Saepe amet ab voluptatem, repellat alias nulla. Architecto quis, nesciunt non sunt minus ullam commodi ipsum nihil consectetur. Illo.
+              </p>
+            </div>
+            <div class="story-carousel">
+              <owl-carousel
+              [items]="currentImages"
+              [options]="carouselOptions"
+              [carouselClasses]="['owl-theme', 'row', 'sliding']"
+            >
+              <div class="item" *ngFor="let img of currentImages;let i = index">
+                <div class="img-grid shadow">
+                  <img [src]="img.src" (click)="open(i)"/>
+                </div>
+              </div>
+            </owl-carousel>
+            </div>
+          </div>
+          <div class="story-content" *ngSwitchCase="4">
+            <div class="story-text">
+              <h4>
+                About the story
+              </h4>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ipsum quia sint fuga natus deleniti magni veniam id animi quibusdam, et laborum officia. Nobis necessitatibus saepe, quae amet voluptate unde ad. Saepe amet ab voluptatem, repellat alias nulla. Architecto quis, nesciunt non sunt minus ullam commodi ipsum nihil consectetur. Illo.
+              </p>
+            </div>
+            <div class="story-carousel">
+              <owl-carousel
+              [items]="currentImages"
+              [options]="carouselOptions"
+              [carouselClasses]="['owl-theme', 'row', 'sliding']"
+            >
+              <div class="item" *ngFor="let img of currentImages;let i = index">
+                <div class="img-grid shadow">
+                  <img [src]="img.src" (click)="open(i)"/>
+                </div>
+              </div>
+            </owl-carousel>
+            </div>
+          </div>
+        
+      </div>  
+    </div>
+  </div>
+</section>
 <section class="pt-2">
   <div class="container">
     <h2 class="text-center mb-5">
@@ -265,10 +411,10 @@
 <section class="boards-section mt-3">
   <div class="container">
     <h2 class="text-center">
-      We are operated by <span class="text-blue">3 main boards</span>.
+      We are operated by <span class="text-blue">2 main boards</span>.
     </h2>
 
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="board-card">
           <div class="board-img">
@@ -299,7 +445,7 @@
           <a routerLink="./boards/indian" class="btn-white">Know More</a>
         </div>
       </div>
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="board-card">
           <div class="board-img">
             <a routerLink="./boards/canadian">
@@ -313,6 +459,55 @@
           </p>
           <a routerLink="./boards/canadian" class="btn-white">Know More</a>
         </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<section class="partner-section">
+  <div class="container">
+    <h2 class="text-center">
+      Our <span class="text-blue">Premier</span> Partners
+    </h2>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+        <a href="https://theh2otower.org/" target="_blank">
+        <div class="partner-card">
+        <img src="assets/img/partners/gwin.png" alt=""/>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+        <a href="http://hsqgroupinc.com/" target="_blank">
+        <div class="partner-card">
+        <img src="assets/img/partners/hsq-group-logo.png" alt=""/>
+        </div>
+      </a>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+        <a href="https://www.idrica.com/goaigua/" target="_blank">
+          <div class="partner-card">
+        <img src="assets/img/partners/logo goaigua alta.png" alt=""/>
+        </div>
+      </a>
+      </div>
+     
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+        <a href="https://www.osisoft.com/" target="_blank">
+          <div class="partner-card">
+        <img src="assets/img/partners/osi.png" alt="" />
+        </div>
+      </a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-6">
+        <a href="https://programcontrolsinc.com/" target="_blank">
+          <div class="partner-card">
+        <img src="assets/img/partners/pci.png" alt="" />
+        </div>
+      </a>
       </div>
     </div>
   </div>

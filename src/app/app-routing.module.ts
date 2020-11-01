@@ -174,7 +174,11 @@ const routes: Routes = [
       }
     ]
   },
-  //-----------Instructor Form page -----------------//
+  //-----------Instructor pages -----------------//
+  {
+    path:'instructor',
+    loadChildren: './instructors/instructor-page/instructor-page.module#InstructorPageModule'
+  },
   {
     path:'instructor-form',
     loadChildren: './instructors/instructor-form/instructor-form.module#InstructorFormModule'

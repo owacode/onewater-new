@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BasHomeComponent } from './bas-home.component';
 import { Route, RouterModule } from '@angular/router';
+import { OwlModule } from 'ngx-owl-carousel';
+import { LightboxModule } from 'ngx-lightbox';
 
 const routes: Route[]=[
     {
@@ -14,7 +16,9 @@ const routes: Route[]=[
   declarations: [BasHomeComponent],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    LightboxModule,
+    OwlModule
     ]
 })
 
