@@ -76,7 +76,7 @@ $modularscale: (
         border-radius: 6px;
 
         @include res(xs){
-            height: 15rem;
+            height: 13rem;
         }
         img{
             height: 100%;
@@ -111,32 +111,31 @@ $modularscale: (
             display: flex;
             height: 15rem;
             @include res(xs){
-               height: 14rem;
+                height: auto;
+               flex-direction: column;
             }
-
-            @include res(480px){
-                height: 13rem;
-             }
-
-             @include res(xxs){
-                height: 15rem;
-             }
 
             .blog-img{
                height: 12rem;
                width: 12rem;
                 border-radius: 8px;
+
+                @include res(sm){
+                    height: 100%;
+                }
+
                  @include res(xs){
-                     height: 100%;
-                     width: 8rem;
+                     height: 12rem;
+                     width: 100%;
+                     margin-bottom: 1rem;
                  }
 
-                 @include res(448px){
-                    width: 7rem;
-                }
-                @include res(xxs){
-                    width: 6rem;
-                }
+                //  @include res(448px){
+                //     width: 7rem;
+                // }
+                // @include res(xxs){
+                //     width: 6rem;
+                // }
 
                 img{
                     height: 100%;
@@ -150,15 +149,23 @@ $modularscale: (
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+
+                @include res(xs){
+                   padding-left: 0;
+                 }
             }
             
         }
         &-horizontal{
             display: flex;
+
+            @include res(xs){
+                flex-direction: column;
+            }
+
             .blog-img{
                 height: 15rem;
                 max-width: 14rem;
-
                 @include res(md){
                     height: 13rem;
                 }
@@ -167,7 +174,10 @@ $modularscale: (
                     max-width: 13rem;
                 }
                 @include res(xs){
-                    display: none;
+                    max-width: 100%;
+                    width: 100%;
+                    height: 13rem;
+                    margin-bottom: 0.8rem;
                 }
                 img{
                     height: 100%;
@@ -199,10 +209,14 @@ $modularscale: (
 
                 &-img{
                     height: 10rem;
+
+                    @include res(sm){
+                        height: 12rem;
+                    }
                 }
     
                 &-title{
-                    @include ms-respond(font-size,0.2);
+                    @include ms-respond(font-size,0.5);
                     letter-spacing: -0.03rem;
                 }
             }

@@ -5,76 +5,76 @@
         <h1 class="blog-landing-heading text-center">
           OneWater <span class="text-blue text-800">Blogs</span>
         </h1>
-        <h3 class="blog-landing-sub-heading">
-          Top insights of water industry 
-          by water professionals
-        </h3>
+        <h4 class="blog-landing-sub-heading">
+          Top insights of water industry by water professionals
+        </h4>
       </div>
       <div class="container">
-      <div class="blog-featured-container">
-       
+        <div class="blog-featured-container">
           <owl-carousel
-          class="blog-featured-carousel"
-          #landingCarousel
-          [items]="bannerBlogs"
-          [options]="landingBlogsCarousel"
-          [carouselClasses]="['owl-theme', 'row', 'sliding']"
-        >
-        <div class="item" *ngFor="let item of bannerBlogs">
-          <div class="blog-card blog-card-landing">
-            <div class="row no-gutters">
-              <div class="col-md-5 order-md-first">
-                <div class="blog-content">
-                  <div>
-                    <h6 class="text-600">
-                      <span class="blog-category">
-                        {{item?.category}}
-                      </span>
-                      - 
-                      <span class="blog-date">
-                        {{item?.date}}
-                      </span>
-                    </h6>
-                  
-        
-                    <h4 class="blog-title">
-                      {{item?.title}}
-                    </h4>
-        
-                    <h6 class="blog-read">
-                      <span class="icon">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      </span>
-                     
-                      {{item?.readingTime}} mins read
-                    </h6>
-                  </div>
+            class="blog-featured-carousel"
+            #landingCarousel
+            [items]="bannerBlogs"
+            [options]="landingBlogsCarousel"
+            [carouselClasses]="['owl-theme', 'row', 'sliding']"
+          >
+            <div class="item" *ngFor="let item of bannerBlogs">
+              <div class="blog-card blog-card-landing">
+                <div class="row no-gutters">
+                  <div class="col-md-5 order-md-first">
+                    <div class="blog-content">
+                      <div>
+                        <h6 class="text-600">
+                          <span class="blog-category">
+                            {{ item?.category }}
+                          </span>
+                          -
+                          <span class="blog-date">
+                            {{ item?.date }}
+                          </span>
+                        </h6>
 
-      
-                  <div>
-                    <a class="btn-dark blog-btn">
-                      Read more
-                    </a>
+                        <h4 class="blog-title">
+                          {{ item?.title }}
+                        </h4>
+                      </div>
+
+                      <div class="blog-wrapper">
+                        <h6 class="blog-read">
+                          <span class="icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          </span>
+
+                          {{ item?.readingTime }} mins read
+                        </h6>
+
+                        <div>
+                          <a class="btn-dark blog-btn"> Read more </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                 
-                </div>
-    
-              </div>
-              <div class="col-md-7 order-first">
-                <div class="blog-img">
-                  <img [src]="item?.img" alt="blog">
-                  <img src="assets/img/vertical-wave.svg" alt="wave" class="wave wave-lg">
-                  <img src="assets/img/white-wave.png" alt="wave" class="wave wave-sm">
+                  <div class="col-md-7 order-first">
+                    <div class="blog-img">
+                      <img [src]="item?.img" alt="blog" />
+                      <img
+                        src="assets/img/vertical-wave.svg"
+                        alt="wave"
+                        class="wave wave-lg"
+                      />
+                      <img
+                        src="assets/img/white-wave.png"
+                        alt="wave"
+                        class="wave wave-sm"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          
-          </div>
-        </div>
-       
-        </owl-carousel>
-  
-        <!-- <div class="owl-numbers">
+          </owl-carousel>
+
+          <!-- <div class="owl-numbers">
           <span class="curr">
             {{currentSlide}}
           </span>
@@ -84,156 +84,142 @@
           </span>
   
         </div> -->
-        <div class="owl-btns">
-          <button class="owl-btn owl-btn-left" (click)="prev()">
-           <img src="assets/img/icons/prev-light.svg" alt="prev">
-          </button>
-          <button class="owl-btn owl-btn-right" (click)="next()">
-            <img src="assets/img/icons/next-light.svg" alt="next">
-                  </button>
-        </div>
+          <div class="owl-btns">
+            <button class="owl-btn owl-btn-left" (click)="prev()">
+              <img src="assets/img/icons/prev-light.svg" alt="prev" />
+            </button>
+            <button class="owl-btn owl-btn-right" (click)="next()">
+              <img src="assets/img/icons/next-light.svg" alt="next" />
+            </button>
+          </div>
         </div>
       </div>
 
-      <img src="assets/img/blog-landing-vector.svg" alt="" class="vector-img">
+      <img src="assets/img/blog-landing-vector.svg" alt="" class="vector-img" />
     </div>
 
     <!--circles-->
     <div class="l-circle l-circle--small"></div>
     <div class="l-circle l-circle--large"></div>
-
   </section>
   <section class="featured-blogs">
     <div class="container">
-      <h2 class="text-center">
-        Featured Blogs
-      </h2>
+      <h2 class="text-center">Featured Blogs</h2>
     </div>
     <div class="featured-blogs-container my-container">
       <div class="row">
         <div class="col-lg-6" *ngFor="let item of featuredBlogs">
           <div class="blog-card blog-card-featured">
             <div class="blog-img">
-              <img [src]="item?.img" alt="blog">
+              <img [src]="item?.img" alt="blog" />
             </div>
-                <div class="blog-content">
-                  <h6 class="text-600">
-                    <span class="blog-category">
-                      {{item?.category}}
-                    </span>
-                  </h6>
-                
-      
-                  <h5 class="blog-title mt-0">
-                    {{item?.title | shorten:70}}
-                  </h5>
+            <div class="blog-content">
+              <h6 class="text-600">
+                <span class="blog-category">
+                  {{ item?.category }}
+                </span>
+              </h6>
 
-                  <h6 class="blog-date">
-                    <span class="icon">
-                      <i class="material-icons">today</i>
-                    </span>
-                   
-                    {{item?.date}} 
-                  </h6>
-      
-                  <div class="d-flex align-items-center justify-content-between mt-2">
-                    <h6 class="blog-read">
-                 
+              <h5 class="blog-title mt-0">
+                {{ item?.title | shorten: 70 }}
+              </h5>
 
-                      <span class="icon">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      </span>
-                     
-                      {{item?.readingTime}} mins read
-                    </h6>
-        
-                    <a class="btn-dark btn-sm blog-btn mt-0">
-                      Read more
-                    </a>
-                  </div>
+              <h6 class="blog-date">
+                <span class="icon">
+                  <i class="material-icons">today</i>
+                </span>
 
-                </div>
+                {{ item?.date }}
+              </h6>
+
+              <div
+                class="d-flex align-items-center justify-content-between mt-2"
+              >
+                <h6 class="blog-read">
+                  <span class="icon">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  </span>
+
+                  {{ item?.readingTime }} mins read
+                </h6>
+
+                <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <img src="assets/img/white-wave-2.svg" alt="img" class="bottom-wave">
-
+  <img src="assets/img/white-wave-2.svg" alt="img" class="bottom-wave" />
 </div>
-
 
 <section class="popular-blogs">
   <div class="my-container">
-
     <div class="popular-container">
-      <h2 class="text-center">
-        Popular Blogs
-      </h2>
+      <h2 class="text-center">Popular Blogs</h2>
 
       <div class="popular-blogs">
         <owl-carousel
-        #popularCarousel
-        [items]="popularBlogs"
-        [options]="popularBlogsCarousel"
-        [carouselClasses]="['owl-theme', 'row', 'sliding']"
-      >
-      <div class="item" *ngFor="let item of popularBlogs">
-        <div class="blog-card blog-card-popular">
-          <div class="blog-img">
-            <img [src]="item?.img" alt="blog">
-          </div>
-        
+          #popularCarousel
+          [items]="popularBlogs"
+          [options]="popularBlogsCarousel"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        >
+          <div class="item" *ngFor="let item of popularBlogs">
+            <div class="blog-card blog-card-popular">
+              <div class="blog-img">
+                <img [src]="item?.img" alt="blog" />
+              </div>
+
               <div class="blog-content">
                 <div>
                   <h5 class="blog-title mb-3">
-                    {{item?.title | shorten : 50}}
+                    {{ item?.title | shorten: 50 }}
                   </h5>
-  
+
                   <h6 class="text-600">
                     <span class="blog-category">
-                      {{item?.category}}
+                      {{ item?.category }}
                     </span>
-                    - 
+                    -
                     <span class="blog-date">
-                      {{item?.date}}
+                      {{ item?.date }}
                     </span>
                   </h6>
                 </div>
-               
-    
-                <div class="d-flex align-items-center justify-content-between mt-4">
+
+                <div
+                  class="d-flex align-items-center justify-content-between mt-4"
+                >
                   <h6 class="blog-read">
                     <span class="icon">
                       <i class="fa fa-clock-o" aria-hidden="true"></i>
                     </span>
-                   
-                    {{item?.readingTime}} mins read
-                  </h6>
-      
-                    <a class="btn-dark btn-sm blog-btn mt-0">
-                      Read more
-                    </a>
-                </div>
-                
-               
-              </div>
-  
-            
-        
-        </div>
-      </div>
-      </owl-carousel>
 
+                    {{ item?.readingTime }} mins read
+                  </h6>
+
+                  <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </owl-carousel>
       </div>
 
       <div class="popular-owl-btns">
-       
-        <button class="popular-owl-btn popular-owl-btn-left" (click)="owlPrev(popularCarousel)">
+        <button
+          class="popular-owl-btn popular-owl-btn-left"
+          (click)="owlPrev(popularCarousel)"
+        >
           <i class="fa fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <button class="popular-owl-btn popular-owl-btn-right" (click)="owlNext(popularCarousel)">
+        <button
+          class="popular-owl-btn popular-owl-btn-right"
+          (click)="owlNext(popularCarousel)"
+        >
           <i class="fa fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>
@@ -241,39 +227,36 @@
   </div>
 </section>
 
-
 <section class="category-section pb-0">
   <div class="container">
-    <h2 class="text-center">
-      Browse by categories
-    </h2>
-<div class="row justify-content-center">
-  <div class="col-lg-8 col-md-10">
-    <div class="category-container">
-      <div class="row justify-content-center">
-        <div class="text-center col-md-3 col-sm-4 col-6" *ngFor="let item of categories">
-          <a href="">
-          <div class="category-card">
-            <img [src]="item.img" alt="">
-            <h6>
-              {{item.name}}
-            </h6>
+    <h2 class="text-center">Browse by categories</h2>
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-lg-10">
+        <div class="category-container">
+          <div class="row justify-content-center">
+            <div
+              class="text-center col-md-3 col-sm-4 col-6"
+              *ngFor="let item of categories"
+            >
+              <a href="">
+                <div class="category-card">
+                  <img [src]="item.img" alt="" />
+                  <h6>
+                    {{ item.name }}
+                  </h6>
+                </div>
+              </a>
+            </div>
           </div>
-        </a>
         </div>
       </div>
     </div>
-  </div>
-</div>
-  
   </div>
 </section>
 
 <section class="latest-blogs">
   <div class="my-container">
-    <h2 class="text-center">
-      Latest Blogs
-    </h2>
+    <h2 class="text-center">Latest Blogs</h2>
 
     <div class="latest-blog-container">
       <div class="row justify-content-center">
@@ -281,174 +264,174 @@
           <div class="row">
             <div class="col-xl-6">
               <div class="row">
-                <div [class.col-sm-6]="(i+1)%3!=0" [class.col-sm-12]="(i+1)%3==0" 
-                *ngFor="let item of latestBlogs;let i = index">
-                  <div class="blog-card" *ngIf="(i+1)%3!=0">
+                <div
+                  [class.col-sm-6]="(i + 1) % 3 != 0"
+                  [class.col-sm-12]="(i + 1) % 3 == 0"
+                  *ngFor="let item of latestBlogs; let i = index"
+                >
+                  <div class="blog-card" *ngIf="(i + 1) % 3 != 0">
                     <div class="blog-img">
-                      <img [src]="item?.img" alt="blog">
+                      <img [src]="item?.img" alt="blog" />
                     </div>
-                  
-                        <div class="blog-content mt-3">
-                          <h6 class="text-700 blog-category">
-                            {{item?.category}}
-                          </h6>
-                          <h5 class="blog-title mt-1 mb-2">
-                            {{item?.title | shorten : 50}}
-                          </h5>
-          
-                         
-                          <h6 class="blog-date">
-                            <span class="icon">
-                              <i class="material-icons">today</i>
-                            </span>
-                           
-                            {{item?.date}} 
-                          </h6>
-              
-                          <div class="d-flex align-items-center justify-content-between mt-4">
-                            <h6 class="blog-read">
-                              <span class="icon">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                              </span>
-                              {{item?.readingTime}} mins read
-                            </h6>
-                              <a class="btn-dark btn-sm blog-btn mt-0">
-                                Read more
-                              </a>
-                          </div>
-                        </div>
+
+                    <div class="blog-content mt-3">
+                      <h6 class="text-700 blog-category">
+                        {{ item?.category }}
+                      </h6>
+                      <h5 class="blog-title mt-1 mb-2">
+                        {{ item?.title | shorten: 50 }}
+                      </h5>
+
+                      <h6 class="blog-date">
+                        <span class="icon">
+                          <i class="material-icons">today</i>
+                        </span>
+
+                        {{ item?.date }}
+                      </h6>
+
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-4"
+                      >
+                        <h6 class="blog-read">
+                          <span class="icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          </span>
+                          {{ item?.readingTime }} mins read
+                        </h6>
+                        <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="blog-card blog-card-horizontal" *ngIf="(i+1)%3==0">
+                  <div
+                    class="blog-card blog-card-horizontal"
+                    *ngIf="(i + 1) % 3 == 0"
+                  >
                     <div class="blog-img">
-                      <img [src]="item?.img" alt="blog">
+                      <img [src]="item?.img" alt="blog" />
                     </div>
-                        <div class="blog-content">
-                          <div>
-                            <h6 class="text-600">
-                              <span class="blog-category">
-                                {{item?.category}}
-                              </span>
-                            </h6>
-                          
-                
-                            <h5 class="blog-title mt-0 mb-3">
-                              {{item?.title | shorten : 50}}
-                            </h5>
-          
-                            <h6 class="blog-date">
-                              <span class="icon">
-                                <i class="material-icons">today</i>
-                              </span>
-                             
-                              {{item?.date}} 
-                            </h6>
-                          </div>
-    
-              
-                          <div class="d-flex align-items-center justify-content-between mt-2">
-                            <h6 class="blog-read">
-                         
-        
-                              <span class="icon">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                              </span>
-                             
-                              {{item?.readingTime}} mins read
-                            </h6>
-                
-                            <a class="btn-dark btn-sm blog-btn mt-0">
-                              Read more
-                            </a>
-                          </div>
-        
-                        </div>
+                    <div class="blog-content">
+                      <div>
+                        <h6 class="text-600">
+                          <span class="blog-category">
+                            {{ item?.category }}
+                          </span>
+                        </h6>
+
+                        <h5 class="blog-title mt-0 mb-3">
+                          {{ item?.title | shorten: 50 }}
+                        </h5>
+
+                        <h6 class="blog-date">
+                          <span class="icon">
+                            <i class="material-icons">today</i>
+                          </span>
+
+                          {{ item?.date }}
+                        </h6>
+                      </div>
+
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-2"
+                      >
+                        <h6 class="blog-read">
+                          <span class="icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          </span>
+
+                          {{ item?.readingTime }} mins read
+                        </h6>
+
+                        <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-xl-6">
               <div class="row">
-                <div [class.col-sm-6]="i%3!=0" [class.col-sm-12]="i%3==0" 
-                *ngFor="let item of latestBlogs;let i = index">
-                  <div class="blog-card" *ngIf="i%3!=0">
+                <div
+                  [class.col-sm-6]="i % 3 != 0"
+                  [class.col-sm-12]="i % 3 == 0"
+                  *ngFor="let item of latestBlogs; let i = index"
+                >
+                  <div class="blog-card" *ngIf="i % 3 != 0">
                     <div class="blog-img">
-                      <img [src]="item?.img" alt="blog">
+                      <img [src]="item?.img" alt="blog" />
                     </div>
-                  
-                        <div class="blog-content mt-3">
-                          <h6 class="text-700 blog-category">
-                            {{item?.category}}
-                          </h6>
-                          <h5 class="blog-title mt-1 mb-2">
-                            {{item?.title | shorten : 50}}
-                          </h5>
-          
-                         
-                          <h6 class="blog-date">
-                            <span class="icon">
-                              <i class="material-icons">today</i>
-                            </span>
-                           
-                            {{item?.date}} 
-                          </h6>
-              
-                          <div class="d-flex align-items-center justify-content-between mt-4">
-                            <h6 class="blog-read">
-                              <span class="icon">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                              </span>
-                              {{item?.readingTime}} mins read
-                            </h6>
-                              <a class="btn-dark btn-sm blog-btn mt-0">
-                                Read more
-                              </a>
-                          </div>
-                        </div>
+
+                    <div class="blog-content mt-3">
+                      <h6 class="text-700 blog-category">
+                        {{ item?.category }}
+                      </h6>
+                      <h5 class="blog-title mt-1 mb-2">
+                        {{ item?.title | shorten: 50 }}
+                      </h5>
+
+                      <h6 class="blog-date">
+                        <span class="icon">
+                          <i class="material-icons">today</i>
+                        </span>
+
+                        {{ item?.date }}
+                      </h6>
+
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-4"
+                      >
+                        <h6 class="blog-read">
+                          <span class="icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          </span>
+                          {{ item?.readingTime }} mins read
+                        </h6>
+                        <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="blog-card blog-card-horizontal" *ngIf="i%3==0">
+                  <div
+                    class="blog-card blog-card-horizontal"
+                    *ngIf="i % 3 == 0"
+                  >
                     <div class="blog-img">
-                      <img [src]="item?.img" alt="blog">
+                      <img [src]="item?.img" alt="blog" />
                     </div>
-                        <div class="blog-content">
-                          <div>
-                            <h6 class="text-600">
-                              <span class="blog-category">
-                                {{item?.category}}
-                              </span>
-                            </h6>
-                          
-                
-                            <h5 class="blog-title mt-0 mb-3">
-                              {{item?.title | shorten : 50}}
-                            </h5>
-          
-                            <h6 class="blog-date">
-                              <span class="icon">
-                                <i class="material-icons">today</i>
-                              </span>
-                             
-                              {{item?.date}} 
-                            </h6>
-                          </div>
-    
-              
-                          <div class="d-flex align-items-center justify-content-between mt-2">
-                            <h6 class="blog-read">
-                         
-        
-                              <span class="icon">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                              </span>
-                             
-                              {{item?.readingTime}} mins read
-                            </h6>
-                
-                            <a class="btn-dark btn-sm blog-btn mt-0">
-                              Read more
-                            </a>
-                          </div>
-        
-                        </div>
+                    <div class="blog-content">
+                      <div>
+                        <h6 class="text-600">
+                          <span class="blog-category">
+                            {{ item?.category }}
+                          </span>
+                        </h6>
+
+                        <h5 class="blog-title mt-0 mb-3">
+                          {{ item?.title | shorten: 50 }}
+                        </h5>
+
+                        <h6 class="blog-date">
+                          <span class="icon">
+                            <i class="material-icons">today</i>
+                          </span>
+
+                          {{ item?.date }}
+                        </h6>
+                      </div>
+
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-2"
+                      >
+                        <h6 class="blog-read">
+                          <span class="icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          </span>
+
+                          {{ item?.readingTime }} mins read
+                        </h6>
+
+                        <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -456,7 +439,6 @@
           </div>
         </div>
       </div>
-   
     </div>
   </div>
 </section>
