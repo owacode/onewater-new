@@ -4,7 +4,8 @@
 --------------     GLOBAL STYLES-------------
 ---------------------------------------------*/
 @import './assets/css/bootstrap.min.css';
-@import '../node_modules/modularscale-sass/stylesheets/modularscale';
+@import '~modularscale-sass/stylesheets/modularscale';
+@import 'node_modules/mathsass/dist/math';
 @import 'blog-global-styles.scss';
 @import 'landing-section-styles.scss';
 @import 'mixins';
@@ -147,7 +148,7 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   color: #101010;
-  font-size: 1.1rem;
+  @include ms-respond(font-size,0.5);
   width: auto;
   cursor: pointer;
   background: #fff;
@@ -263,8 +264,7 @@ margin: 1rem;}
 .btn-loading-content{
   display: none;
 }
-
-.btn-white, .btn-dark{
+a.btn-white, a.btn-dark,.btn-white,.btn-dark{
   font-size: 1.1rem;
   width: auto;
   cursor: pointer;
@@ -279,31 +279,35 @@ margin: 1rem;}
     font-size: 0.9rem;
   }
 }
-.btn-white{
-  color: #101010;
+.btn-white, a.btn-white{
+  color: #101010 !important;
   background: #fff;
   border: 1.5px solid #0000003b;
 
-  &:hover{
-    color: #fff;
+  &:hover,&:active{
+    color: #fff !important;
     border-color: #101010;
     background-color: #101010;
   }
 }
-.btn-dark{
-  color: #fff;
+.btn-dark,a.btn-dark{
+  color: #fff !important;
   background: #101010;
   border: 1.5px solid transparent;
 
-  &:hover{
-    color: #101010;
+  &:hover,&:active{
+    color: #101010 !important;
     border-color: #0000003b;
     background-color: #fff;
   }
 }
 .btn-sm{
-  padding: 8px 12px;
-  font-size: 0.9rem;
+  padding: 8px 12px !important;
+  font-size: 0.9rem !important;
+
+  @include res(xs){
+    font-size: 0.8rem !important;
+  }
 }
 
 .reg-logo{

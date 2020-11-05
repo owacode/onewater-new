@@ -5,6 +5,7 @@ import { LandingPageComponent } from './landing-components/landing-page/landing-
 import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { Authguard } from './Authguard/authguard';
+import { OnewaterblogComponent } from './onewaterblog/onewaterblog.component';
 
 const routes: Routes = [
 
@@ -104,38 +105,37 @@ const routes: Routes = [
 
   {
     path: 'onewaterblog',
-    component: BlogWebsiteComponent,
+    component: OnewaterblogComponent,
     children: [
       {
         path: '',
-        loadChildren: './blog-website/blog/blog.module#BlogModule'
+        loadChildren: './onewaterblog/onewaterblog-home/onewaterblog-home.module#OnewaterblogHomeModule'
       },
-      {
-        path: 'blogpost/:id',
-        loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule',
-        //canActivate: [Authguard]
-      },
-      {
-        path: 'admin-blogpost/:id',
-        loadChildren: './blog-website/admin-blogpost/admin-blogpost.module#AdminBlogpostModule',
-        //canActivate: [Authguard]
-      },
+      // {
+      //   path: 'blogpost/:id',
+      //   loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule',
+      //   //canActivate: [Authguard]
+      // },
+      // {
+      //   path: 'admin-blogpost/:id',
+      //   loadChildren: './blog-website/admin-blogpost/admin-blogpost.module#AdminBlogpostModule',
+      //   //canActivate: [Authguard]
+      // },
       
-      {
-        path: 'authorprofile/:id',
-        loadChildren: './blog-website/author-page/author-page.module#AuthorPageModule'
-      },
+      // {
+      //   path: 'authorprofile/:id',
+      //   loadChildren: './blog-website/author-page/author-page.module#AuthorPageModule'
+      // },
      
-      {
-        path: 'category',
-        loadChildren: './blog-website/category/category.module#CategoryModule'
-      },
+      // {
+      //   path: 'category',
+      //   loadChildren: './blog-website/category/category.module#CategoryModule'
+      // },
     
-      {
-        path: 'author/login',
-        loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
-      },
-      
+      // {
+      //   path: 'author/login',
+      //   loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
+      // },
     ]
   },
   //-----------Author Registeration page -----------------//

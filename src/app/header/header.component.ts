@@ -26,7 +26,7 @@ toggleHeader() {
         event['url'] == '/signup' ||
         event['url'] == '/login' ||
         event['url'] == '/instructor-form' ||
-        event['url'].includes('/onewaterblog/author/') ||
+        event['url'].includes('/onewaterblog') ||
         //event['url'].includes('/onewaterblog/mayor/') ||
         //event['url'].includes('/onewaterblog/cro/') ||
         event['url'].includes('/instructor/') ||

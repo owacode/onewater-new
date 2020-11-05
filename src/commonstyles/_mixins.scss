@@ -30,4 +30,9 @@
             @content
         };
     }
+    @else {
+        @media (max-width:$break-point){ // --some other breakpoint
+            @content;
+        }
+    }
 }

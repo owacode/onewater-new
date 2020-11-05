@@ -9,18 +9,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { LandingComponentsComponent } from './landing-components/landing-components.component';
 import { LandingPageComponent } from './landing-components/landing-page/landing-page.component';
-import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { OnewaterblogComponent } from './onewaterblog/onewaterblog.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, VideoWebsiteComponent
+    AppComponent,LandingComponentsComponent, LandingPageComponent, VideoWebsiteComponent,OnewaterblogComponent
   ],
 
   exports:[],
