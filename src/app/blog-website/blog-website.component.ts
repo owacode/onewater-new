@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorAuthService } from '../authors/services/author-auth.service';
-import { ModalFunctions } from '../shared-functions/modal-functions';
 
 @Component({
   selector: 'app-blog-website',
@@ -8,7 +6,7 @@ import { ModalFunctions } from '../shared-functions/modal-functions';
   styleUrls: ['./blog-website.component.scss']
 })
 export class BlogWebsiteComponent implements OnInit {
-  constructor(public auth:AuthorAuthService,public modal: ModalFunctions) { }
+  constructor() { }
 
   ngOnInit() {
 

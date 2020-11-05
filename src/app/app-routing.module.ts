@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponentsComponent } from './landing-components/landing-components.component';
 import { LandingPageComponent } from './landing-components/landing-page/landing-page.component';
-import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { Authguard } from './Authguard/authguard';
 import { OnewaterblogComponent } from './onewaterblog/onewaterblog.component';
