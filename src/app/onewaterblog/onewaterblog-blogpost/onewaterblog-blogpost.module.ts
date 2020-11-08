@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OnewaterblogCategoryComponent } from './onewaterblog-category.component';
+import { OnewaterblogBlogpostComponent } from './onewaterblog-blogpost.component';
 import { Route, RouterModule } from '@angular/router';
 import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
+import { OwlModule } from 'ngx-owl-carousel';
 
 const routes: Route[]=[
     {
     path: '',
-    component: OnewaterblogCategoryComponent
+    component: OnewaterblogBlogpostComponent
     }
 ]
 
 @NgModule({
-  declarations: [OnewaterblogCategoryComponent],
+  declarations: [OnewaterblogBlogpostComponent],
   imports: [
     CommonPipesModule,
+    OwlModule,
     RouterModule.forChild(routes),
     CommonModule,
     ]
 })
 
-export class OnewaterblogCategoryModule { }
+export class OnewaterblogBlogpostModule { }

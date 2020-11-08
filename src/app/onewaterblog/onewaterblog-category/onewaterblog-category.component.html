@@ -1,3 +1,86 @@
-<p>
-  onewaterblog-category works!
-</p>
+<section class="category-landing-section">
+  <div class="my-container">
+    <h2 class="text-center">
+      <a routerLink="/onewaterblog">OneWater Blogs</a> /
+      <span class="text-blue">
+        Water
+      </span>
+    </h2>
+
+    <div class="category-blogs">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-10" *ngFor="let item of categoryBlogs">
+          <a [routerLink]="['/onewaterblog/blogpost']">
+            <div class="blog-card blog-card-featured" >
+              <div class="blog-img">
+                <img [src]="item?.img" alt="blog" />
+              </div>
+              <div class="blog-content">
+                <h6 class="text-600">
+                  <span class="blog-category">
+                    {{ item?.category }}
+                  </span>
+                </h6>
+  
+                <h5 class="blog-title mt-0">
+                  {{ item?.title | shorten: 70 }}
+                </h5>
+  
+                <h6 class="blog-date">
+                  <span class="icon">
+                    <i class="material-icons">today</i>
+                  </span>
+  
+                  {{ item?.date }}
+                </h6>
+  
+                <div
+                  class="d-flex align-items-center justify-content-between mt-2"
+                >
+                  <h6 class="blog-read">
+                    <span class="icon">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </span>
+  
+                    {{ item?.readingTime }} mins read
+                  </h6>
+  
+                  <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="assets/img/white-wave-2.svg" alt="img" class="bottom-wave" />
+
+</section>
+
+<section class="other-categories">
+  <div class="container">
+    <h2 class="text-center">Explore other categories</h2>
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-lg-10">
+        <div class="category-container">
+          <div class="row justify-content-center">
+            <div
+              class="text-center col-md-3 col-sm-4 col-6"
+              *ngFor="let item of categories"
+            >
+              <a routerLink="/onewaterblog/category">
+                <div class="category-card">
+                  <img [src]="item.img" alt="" />
+                  <h6>
+                    {{ item.name }}
+                  </h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

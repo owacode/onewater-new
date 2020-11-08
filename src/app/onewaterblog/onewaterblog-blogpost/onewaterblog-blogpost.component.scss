@@ -1,0 +1,64 @@
+@import "../blog.scss";
+
+.blogpost {
+  &-header {
+    height: 80vh;
+    position: relative;
+    //background-image:linear-gradient(-227.87deg, #e3e9ff83 2.14%, rgba(233, 235, 255, 0) 89.91%, #ffffffb0 89.91%);
+    background-size: cover;
+    background-position: top center;
+
+
+    @include res(lg){
+        height: 70vh;
+    }
+    @include res(md){
+        height: 60vh;
+    }
+    @include res(xs){
+        height: 40vh;
+    }
+    .bottom-wave {
+      bottom: -1px;
+      z-index: 1;
+    }
+    .gradient-image {
+      background-image: linear-gradient(
+        to bottom right,
+        #355bffba 25%,
+        #4d81ffc4 60%,
+        #4de3ffd6
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-body {
+    margin-top: -10vh;
+    position: relative;
+    z-index: 2;
+
+    @include res(lg){
+        margin-top: -5vh;
+    }
+    @include res(md){
+        margin-top: -2vh;
+    }
+  }
+
+  &-heading{
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+
+      @include res(xs){
+          padding-bottom: 0.8rem;
+          margin-bottom: 1rem;
+      }
+  }
+}

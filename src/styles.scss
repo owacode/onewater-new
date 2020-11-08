@@ -515,3 +515,69 @@ a.btn-white, a.btn-dark,.btn-white,.btn-dark{
 
 }
 
+
+
+//blogpost styles 
+.blogpost-content{
+  img{
+     //width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.2rem 0 1.5rem;
+  }
+
+  p,ul li, ol li, em{
+      font-size: 1.6rem;
+      text-align: justify;
+      line-height: 1.6;
+  }
+
+  p{
+      margin-bottom: 1.5rem;
+  }
+
+  h1{
+    @include ms-respond(font-size,6);
+    font-weight: 700;
+    letter-spacing: -0.1rem;
+    margin-top: 2.5rem;
+  }
+  h2{
+    @include ms-respond(font-size,4);
+    font-weight: 700;
+    letter-spacing: -0.09rem;
+    margin-top: 2.5rem;
+  }
+  h3{
+    @include ms-respond(font-size,3);
+    letter-spacing: -0.07rem;
+    margin-top: 2rem;
+  }
+  h4{
+    @include ms-respond(font-size,2);
+    letter-spacing: -0.05rem;
+    margin-top: 2rem;
+  }
+  h5{
+    @include ms-respond(font-size,1);
+    letter-spacing: -0.03rem;
+    margin-top: 1.5rem;
+  }
+  h6{
+    @include ms-respond(font-size,0);
+    letter-spacing: -0.01rem;
+  }
+  
+  ul,ol{
+      padding: 0 3rem;
+
+      li{
+          margin-bottom: 1.5rem;
+      }
+  }
+
+  strong{
+      font-weight: 800;
+  }
+  
+}

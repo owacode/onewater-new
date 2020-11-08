@@ -1,0 +1,32 @@
+@import '../blog.scss';
+
+.category{
+    &-landing-section{
+        padding-top: 13vh;
+        padding-bottom: 20rem;
+        background-image:linear-gradient(-227.87deg, #e3e9ff 2.14%, rgba(233, 235, 255, 0) 89.91%, #FFFFFF 89.91%);
+
+        h2{
+            padding-bottom: 2rem;
+            border-bottom:1.2px solid rgba(12, 121, 225, 0.14);;
+        }
+
+        @include res(xs){
+            padding-top: 8vh;
+        }
+    }
+    &-blogs{
+        margin-top: 2rem;
+    }
+}
+
+
+
+.other-categories{
+    margin-top: -20rem;
+}
+
+.bottom-wave{
+    left: -30%;
+    width: 130%;
+}

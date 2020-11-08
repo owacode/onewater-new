@@ -114,6 +114,10 @@ const routes: Routes = [
         path: 'category',
         loadChildren: './onewaterblog/onewaterblog-category/onewaterblog-category.module#OnewaterblogCategoryModule'
       },
+      {
+        path: 'blogpost',
+        loadChildren: './onewaterblog/onewaterblog-blogpost/onewaterblog-blogpost.module#OnewaterblogBlogpostModule'
+      },
       // {
       //   path: 'blogpost/:id',
       //   loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule',

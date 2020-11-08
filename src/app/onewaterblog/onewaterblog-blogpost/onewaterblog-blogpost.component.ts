@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { OwlCarousel } from 'ngx-owl-carousel';
 
 @Component({
-  selector: 'app-onewaterblog-category',
-  templateUrl: './onewaterblog-category.component.html',
-  styleUrls: ['./onewaterblog-category.component.scss']
+  selector: 'app-onewaterblog-blogpost',
+  templateUrl: './onewaterblog-blogpost.component.html',
+  styleUrls: ['./onewaterblog-blogpost.component.scss']
 })
-export class OnewaterblogCategoryComponent implements OnInit {
+export class OnewaterblogBlogpostComponent implements OnInit {
 
-  constructor() { }
 
-  categoryBlogs = [
+  popularBlogs = [
     {
       category:'Water',
       date:'2 October, 2020',
@@ -54,38 +54,54 @@ export class OnewaterblogCategoryComponent implements OnInit {
     }
   ]
 
-  categories = [
-    {
-      'img': 'assets/img/icons/water.svg',
-      'name': 'Water'
-    },
-    {
-      'img': 'assets/img/icons/waste-water.svg',
-      'name': 'Waste Water'
-    },
-    {
-      'img': 'assets/img/icons/storm.svg',
-      'name': 'Storm Water'
-    },
-    {
-      'img': 'assets/img/icons/research.svg',
-      'name': 'Innovation & Research'
-    },
-    {
-      'img': 'assets/img/icons/sustainable.svg',
-      'name': 'Sustainable Development'
-    },
-    {
-      'img': 'assets/img/icons/finance.svg',
-      'name': 'Management & Finance'
-    },
-    {
-      'img': 'assets/img/icons/regulatory.svg',
-      'name': 'Legislative & Regulatory'
-    },
-  ]
+  constructor() { }
 
   ngOnInit() {
+  }
+
+  popularBlogsCarousel = {
+    margin: 10,
+    nav: false,
+    loop:true,
+    dots: false,
+    stagePadding: 0,
+    items: 4,
+    responsiveClass:true,
+    responsive: {
+      0:{
+        items:1,
+        stagePadding:0
+      },
+      480:{
+        items: 1,
+        stagePadding:50
+      },
+      576: {
+        items: 1,
+        stagePadding:100
+      },
+      630:{
+        items: 2,
+        stagePadding:0
+      },
+      800: {
+        items: 2,
+        stagePadding:100
+      },
+      991: {
+        items: 3,
+      },
+     1200: {
+        items: 4,
+      }
+    }
+  }
+
+  owlNext(owl:OwlCarousel){
+    owl.next();
+  }
+  owlPrev(owl:OwlCarousel){
+    owl.previous();
   }
 
 }
