@@ -111,11 +111,11 @@ const routes: Routes = [
         loadChildren: './onewaterblog/onewaterblog-home/onewaterblog-home.module#OnewaterblogHomeModule'
       },
       {
-        path: 'category',
+        path: 'category/:id',
         loadChildren: './onewaterblog/onewaterblog-category/onewaterblog-category.module#OnewaterblogCategoryModule'
       },
       {
-        path: 'blogpost',
+        path: 'blogpost/:id',
         loadChildren: './onewaterblog/onewaterblog-blogpost/onewaterblog-blogpost.module#OnewaterblogBlogpostModule'
       },
       // {

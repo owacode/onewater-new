@@ -22,9 +22,9 @@
                   type="text"
                   class="form-control"
                   placeholder="Enter your first name"
-                  formControlName="firstname"
+                  formControlName="firstName"
                 />
-                <div class="form-group" *ngIf=" form.get('firstname').invalid &&submitted" >
+                <div class="form-group" *ngIf=" form.get('firstName').invalid &&submitted" >
                   <p>Please enter your first name!</p>
               </div>
               </div>
@@ -38,9 +38,9 @@
                   type="text"
                   class="form-control"
                   placeholder="Enter your last name"
-                  formControlName="lastname"
+                  formControlName="lastName"
                 />
-                <p *ngIf="submitted && form.get('lastname').invalid">
+                <p *ngIf="submitted && form.get('lastName').invalid">
                   Please enter your last name!
                 </p>
               </div>
@@ -54,9 +54,9 @@
                   type="text"
                   class="form-control"
                   placeholder="Enter your organization name"
-                  formControlName="organization"
+                  formControlName="organizationName"
                 />
-                <p *ngIf="submitted && form.get('organization').invalid">
+                <p *ngIf="submitted && form.get('organizationName').invalid">
                   Please enter your Organization!
                 </p>
               </div>
@@ -92,7 +92,7 @@
 
                   class="form-control"
                   placeholder="Enter your mobile number"
-                  formControlName="mobile_no"
+                  formControlName="phone"
                 />
                
               </div>
@@ -107,12 +107,12 @@
               <label class="col-sm-3 col-form-label">Type of Course</label>
               <div class="col-sm-9">
                 
-                <input name="course_type" formControlName="course_type" value="Webinar" type="checkbox" id="f-option">
+                <input name="course_type" formControlName="courseType" value="Webinar" type="checkbox" id="f-option">
                 <label for="f-option">Webinar</label>
-                <input name="course_type" formControlName="course_type" value="Online Course" type="checkbox" id="s-option">
+                <input name="course_type" formControlName="courseType" value="Online Course" type="checkbox" id="s-option">
                 <label for="s-option">Online Course</label>
                 <br>
-                <p *ngIf="submitted && form.get('course_type').invalid">
+                <p *ngIf="submitted && form.get('courseType').invalid">
                   Please select your Course Type!
                 </p>
               </div>
@@ -140,9 +140,9 @@
                   type="text"
                   class="form-control"
                   placeholder="Enter title of proposed course title"
-                  formControlName="proposed_course_title"
+                  formControlName="courseTitle"
                 />
-                <p *ngIf="submitted && form.get('proposed_course_title').invalid">
+                <p *ngIf="submitted && form.get('courseTitle').invalid">
                   Please enter your Proposed Course Title!
                 </p>
               </div>
@@ -154,7 +154,7 @@
               <div class="col-sm-9">
                 <select
                   class="form-control"
-                  formControlName="category"
+                  formControlName="courseCategory"
                 >
                 <option value="">Select Course Category</option>
                 <option value="Water">Water</option>
@@ -178,7 +178,7 @@
                 <option value="Other">Other</option>
 
               </select>
-                <p *ngIf="submitted && form.get('category').invalid">
+                <p *ngIf="submitted && form.get('courseCategory').invalid">
                   Please select a category for your course!
                 </p>
               </div>
@@ -188,8 +188,8 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Course Description</label>
               <div class="col-sm-9">
-                <textarea formControlName="proposed_desc" class="form-control" placeholder="Enter few words about your course"></textarea>
-                <p *ngIf="submitted && form.get('proposed_desc').invalid">
+                <textarea formControlName="courseDescription" class="form-control" placeholder="Enter few words about your course"></textarea>
+                <p *ngIf="submitted && form.get('courseDescription').invalid">
                   Please enter your Proposed Description!
                 </p>
               </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +10,7 @@ import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public http:HttpClient, public modal: ModalFunctions) { }
+  constructor(public http: HttpService, public modal: ModalFunctions) { }
   user;
   submitted:boolean=false;
 
@@ -31,8 +31,8 @@ export class ContactComponent implements OnInit {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{status: any, msg: any, result:any}>('https://onewateracademy.org/api/blog/contact',this.user.value)
-    .subscribe(result=> {
+    this.http.postToBackend('/users/contact',this.user.value)
+    .then((res: any)=> {
       //console.log(result);
       this.modal.hideBtnLoader();
      // alert(result.msg)

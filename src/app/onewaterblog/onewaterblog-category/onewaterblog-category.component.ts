@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-onewaterblog-category',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnewaterblogCategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public blogService: BlogService, public route: ActivatedRoute) { }
 
   categoryBlogs = [
     {
@@ -57,35 +59,49 @@ export class OnewaterblogCategoryComponent implements OnInit {
   categories = [
     {
       'img': 'assets/img/icons/water.svg',
-      'name': 'Water'
+      'name': 'Water',
+      'id': 1
     },
     {
       'img': 'assets/img/icons/waste-water.svg',
-      'name': 'Waste Water'
+      'name': 'Waste Water',
+      'id': 1360
     },
     {
       'img': 'assets/img/icons/storm.svg',
-      'name': 'Storm Water'
+      'name': 'Storm Water',
+      'id': 1361
     },
     {
       'img': 'assets/img/icons/research.svg',
-      'name': 'Innovation & Research'
+      'name': 'Innovation & Research',
+      'id': 1362
     },
     {
       'img': 'assets/img/icons/sustainable.svg',
-      'name': 'Sustainable Development'
+      'name': 'Sustainable Development',
+      'id': 1363
     },
     {
       'img': 'assets/img/icons/finance.svg',
-      'name': 'Management & Finance'
+      'name': 'Management & Finance',
+      'id': 1364
     },
     {
       'img': 'assets/img/icons/regulatory.svg',
-      'name': 'Legislative & Regulatory'
+      'name': 'Legislative & Regulatory',
+      'id': 1365
     },
   ]
 
   ngOnInit() {
+    this.route.params.subscribe(res => {
+      this.blogService.getBlogsForCategory(res.id)
+      .then((res: any) => {
+        console.log(res)
+        this.categoryBlogs = res
+      })
+    })
   }
 
 }

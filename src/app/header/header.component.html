@@ -241,22 +241,22 @@ id="userButton"
         <form [formGroup]="form">
           <input
             name="firstname"
-            formControlName="firstname"
+            formControlName="firstName"
             class="vldform__textbox"
             type="text"
             placeholder="First Name"
             required
           />
-          <p *ngIf="submited && form.get('firstname').invalid">Enter Your First Name</p>
+          <p *ngIf="submited && form.get('firstName').invalid">Enter Your First Name</p>
           <input
           name="lastname"
-          formControlName="lastname"
+          formControlName="lastName"
           class="vldform__textbox"
           type="text"
           placeholder="Last Name"
           required
         />
-        <p *ngIf="submited && form.get('lastname').invalid">Enter Your Last Name</p>
+        <p *ngIf="submited && form.get('lastName').invalid">Enter Your Last Name</p>
           <input
             name="email"
             formControlName="email"

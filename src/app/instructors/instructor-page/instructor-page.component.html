@@ -171,26 +171,26 @@ The people you mentor through OneWater can become your friends, colleagues or bu
   <div class="col-md-6">
     <input
     name="name"
-    formControlName="firstname"
+    formControlName="firstName"
     class="vldform__textbox"
     type="text"
     placeholder="First Name"
     required
   />
-  <p *ngIf="submitted && form.get('firstname').invalid">
+  <p *ngIf="submitted && form.get('firstName').invalid">
     Please enter your First Name!
   </p>
   </div>
   <div class="col-md-6">
     <input
     name="lastname"
-    formControlName="lastname"
+    formControlName="lastName"
     class="vldform__textbox"
     type="text"
     placeholder="Last Name"
     required
   />
-  <p *ngIf="submitted && form.get('lastname').invalid">
+  <p *ngIf="submitted && form.get('lastName').invalid">
     Please enter your Last Name!
   </p>
   </div>
@@ -198,12 +198,12 @@ The people you mentor through OneWater can become your friends, colleagues or bu
 
 <input
 name="course"
-formControlName="organization"
+formControlName="organizationName"
 class="vldform__textbox"
 type="text"
 placeholder="Organization Name"
 />
-<p *ngIf="submitted && form.get('organization').invalid">
+<p *ngIf="submitted && form.get('organizationName').invalid">
   Please enter your Organization!
 </p>
 <input
@@ -225,37 +225,37 @@ required
 
           <input
           name="phone"
-          formControlName="mobile_no"
+          formControlName="phone"
           class="vldform__textbox"
           type="number"
           placeholder="Phone Number: (Optional)"
         />
 
-        <input formControlName="proposed_course_topic" type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
-        <p *ngIf="submitted && form.get('proposed_course_topic').invalid">
+        <input formControlName="courseCategory" type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
+        <p *ngIf="submitted && form.get('courseCategory').invalid">
           Please enter your Proposed Course Topic!
         </p>
         <h6>Type of Course</h6>
-        <input formControlName="course_type" value="Webinar" type="radio" id="f-option">
+        <input formControlName="courseType" value="Webinar" type="radio" id="f-option">
     <label for="f-option">Webinar</label>
-    <input formControlName="course_type" value="Online Course" type="radio" id="s-option">
+    <input formControlName="courseType" value="Online Course" type="radio" id="s-option">
     <label for="s-option">   Online Course</label>
-      <p *ngIf="submitted && form.get('course_type').invalid">
+      <p *ngIf="submitted && form.get('courseType').invalid">
         Please select your Course Type!
       </p>
 
-        <input formControlName="proposed_course_title" type="text" class="vldform__textbox" placeholder="Proposed Course Title">
-        <p *ngIf="submitted && form.get('proposed_course_title').invalid">
+        <input formControlName="courseTitle" type="text" class="vldform__textbox" placeholder="Proposed Course Title">
+        <p *ngIf="submitted && form.get('courseTitle').invalid">
           Please enter your Proposed Course Title!
         </p>
-        <textarea formControlName="proposed_desc" name="" id="" cols="30" rows="5" class="vldform__textbox" placeholder="Proposed Course Description (100 Words)"></textarea>
-        <p *ngIf="submitted && form.get('proposed_desc').invalid">
+        <textarea formControlName="courseDescription" name="" id="" cols="30" rows="5" class="vldform__textbox" placeholder="Proposed Course Description (100 Words)"></textarea>
+        <p *ngIf="submitted && form.get('courseDescription').invalid">
           Please enter your Proposed Desc!
         </p>
           <button
             type="submit"
             class="btn btn-default"
-            (click)="modal.showBtnLoader()"
+            (click)="register()"
           >
             <span class="btn-loading-content">
               <i class="fa fa-circle-o-notch fa-spin"></i> Loading...

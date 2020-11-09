@@ -6,11 +6,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10">
-          <h1 class="blogpost-heading">What is One Water?</h1>
+          <h1 class="blogpost-heading">{{blog?.title.rendered}}</h1>
   
           <!--demo blog content-->
           <div class="blog-post-content">
-            <div _ngcontent-skq-c5="" class="blog-content">
+            <div _ngcontent-skq-c5="" class="blog-content" [innerHtml]="blog?.content.rendered">
               <div
                 id="i4c-draggable-container"
                 style="position: fixed; z-index: 1499; width: 0px; height: 0px"
@@ -19,90 +19,7 @@
                   &nbsp;
                 </div>
               </div>
-              <p><strong>What is One Water?</strong></p>
-              <p>
-                Our planet has a finite amount of water. And in today’s complex
-                world, there are many competing demands for this precious
-                resource. Water demands for consumption, industrial uses,
-                agriculture, ecosystems and healthy habitat needs. And water
-                demands and stresses are only getting more challenging as
-                population grows and our climate is changing.
-              </p>
-              <p>
-                One Water is new way of thinking about how we value and manage
-                water. One Water is based on the premise that all water has value.
-                Not just potable water that we drink. But also wastewater that we
-                can treat to serve non-potable demand or recharge groundwater
-                aquifers. Rainwater and even urban stormwater can be recycled. The
-                One Water framework looks at how to optimize the beneficial use of
-                water in the entire water cycle. Considerations include recycling,
-                capture, and storage. The end result is improved water quality,
-                water resiliency and sustainability.
-              </p>
-              <p>
-                <img
-                  style="display: block; margin-left: auto; margin-right: auto"
-                  src="http://res.cloudinary.com/onewater/image/upload/v1587419719/ym3rthwisktlkl0cwqxv.png"
-                  alt=""
-                  width="938"
-                  height="536"
-                />
-              </p>
-              <p>
-                &nbsp;One Water solutions can be implemented throughout the entire
-                water cycle. It involves managing finite water resources for
-                long-term resilience and reliability, meeting both community and
-                ecosystem needs.
-              </p>
-              <p>
-                One Water is an integrated planning and implementation approach to
-                a managing finite water resources for long-term resilience and
-                reliability, meeting both community and ecosystem needs. Many
-                innovative utilities and cities across the US have embraced the
-                One Water approach by taking a more holistic look at the water
-                challenges and need for institutional collaboration and
-                stakeholder engagement to develop sustainable solutions. The One
-                Water approach is inclusive and first of all promotes
-                collaboration by between water, wastewater, recycled water, and
-                stormwater management utilities. But it goes beyond that. By
-                embracing other “non-water” agencies and stakeholders, creative
-                One Water solutions can be implemented.
-              </p>
-              <p>
-                For example, collaboration with transportation agencies can pave
-                the way for large scale green infrastructure along new roads and
-                railways in a cost-effective manner. By working together early in
-                the planning process, smart water management approaches can be
-                incorporated in design and construction by agencies that typically
-                do not consider water footprint or water quality improvements. For
-                example, the Los Angeles Zoo incorporated green stormwater
-                infrastructure and water recycling for many animal exhibits in the
-                LA Zoo Master Plan as a result of collaboration with the One Water
-                LA team.
-              </p>
-              <p>
-                <img
-                  style="display: block; margin-left: auto; margin-right: auto"
-                  src="http://res.cloudinary.com/onewater/image/upload/v1587421449/vpe9fkeohdnsafqy0fes.jpg"
-                  alt=""
-                  width="939"
-                  height="529"
-                /><br /><em
-                  >One Water collaboration takes place at multiple levels, from
-                  executive management between various agencies to active
-                  engagement of stakeholders and the general public. (Photo: One
-                  Water LA stakeholder workshop #3, October 2016).</em
-                >
-              </p>
-              <p>
-                One Water is a movement that is sweeping across the nation. This
-                paradigm shift incorporates sustainable and resilient water
-                management strategies for utilities large and small that balances
-                urban, rural, and environmental benefits. Together we can
-                transform the way we manage our finite water resources as
-                <strong>One Water</strong>.
-              </p>
-              <div id="i4c-dialogs-container">&nbsp;</div>
+              
             </div>
           </div>
         </div>

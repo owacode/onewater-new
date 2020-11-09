@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { OwlCarousel } from 'ngx-owl-carousel';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-onewaterblog-blogpost',
@@ -53,10 +55,17 @@ export class OnewaterblogBlogpostComponent implements OnInit {
       img:'https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
     }
   ]
-
-  constructor() { }
+  blog;
+  constructor(public blogService: BlogService, public route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe((res: any) => {
+      this.blogService.getSingleBlog(res.id)
+      .then((res: any) => {
+        console.log(res)
+        this.blog = res
+      })
+    })
   }
 
   popularBlogsCarousel = {

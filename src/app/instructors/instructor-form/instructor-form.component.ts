@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
-import {FormControl, FormGroup, Validators} from '@angular/forms'
-import { HttpClient } from '@angular/common/http';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { InstructorService } from '../../instructor.service';
 import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-instructor-form',
@@ -11,41 +11,38 @@ import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
   styleUrls: ['./instructor-form.component.scss']
 })
 export class InstructorFormComponent implements OnInit {
-  public submitted: Boolean = false;
+public submitted: Boolean = false;
   form:FormGroup;
   
 
-  constructor(public http:HttpClient, public modal: ModalFunctions, public auth: InstructorService) { }
+  constructor(public http: HttpService, public modal: ModalFunctions, public auth: InstructorService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-      firstname: new FormControl(null, {validators:[Validators.required]}),
-      lastname: new FormControl(null, {validators:[Validators.required]}),
+      firstName: new FormControl(null, {validators:[Validators.required]}),
+      lastName: new FormControl(null, {validators:[Validators.required]}),
       email: new FormControl(null, {validators:[Validators.required,Validators.email]}),
-      organization: new FormControl(null, {validators:[Validators.required]}),
-      mobile_no: new FormControl(null),
-      //proposed_course_topic: new FormControl(null),
-      category: new FormControl('',{validators:[Validators.required]}),
-      course_type: new FormControl(null, {validators:[Validators.required]}),
-      proposed_course_title: new FormControl(null, {validators:[Validators.required]}),
-      proposed_desc: new FormControl(null, {validators:[Validators.required]})
+      organizationName: new FormControl(null, {validators:[Validators.required]}),
+      phone: new FormControl(null),
+      courseCategory: new FormControl('',{validators:[Validators.required]}),
+      courseType: new FormControl(null, {validators:[Validators.required]}),
+      courseTitle: new FormControl(null, {validators:[Validators.required]}),
+      courseDescription: new FormControl(null, {validators:[Validators.required]})
     })
 
     Feather.replace();
   }
 
   register() {
+    console.log(this.form.value)
     this.submitted = true;
-    //console.log(this.form.value);
     if(this.form.invalid){
       this.modal.hideBtnLoader();
-      //console.log('invalid reset form');
       return;
     }
     //console.log(this.form.value,'after reset');
-    this.auth.registerInstructor(this.form.value)
-    .subscribe(result=> {
-      //console.log(result);
+    this.http.postToBackend('/users/register/instructor', this.form.value)
+    .then((res: any)=> {
       this.modal.hideBtnLoader();
       this.modal.openModal('#detailsSubmitted');
       this.form.reset();

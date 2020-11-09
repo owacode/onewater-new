@@ -1,11 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { AuthService } from '../auth.service';
 import * as $ from 'jquery';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ModalFunctions } from '../shared-functions/modal-functions';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 import { AuthorAuthService } from '../authors/services/author-auth.service';
+import { HttpService } from '../services/http.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -65,7 +65,7 @@ toggleHeader() {
 }
 }
 
-  constructor(public http: HttpClient, public auth: AuthService, public author: AuthorAuthService, public router: Router, public modal:ModalFunctions) {
+  constructor(public http: HttpService, public auth: AuthService, public author: AuthorAuthService, public router: Router, public modal:ModalFunctions) {
     //this.showAuhtorLogin();
     this.toggleHeader();
    }
@@ -99,8 +99,8 @@ toggleHeader() {
     $(hamburger).on("click", showMenu);
     $(menulink).on("click", showMenu);
     this.form= new FormGroup({
-      firstname:new FormControl(null, {validators:[Validators.required]}),
-      lastname:new FormControl(null, {validators:[Validators.required]}),
+      firstName:new FormControl(null, {validators:[Validators.required]}),
+      lastName:new FormControl(null, {validators:[Validators.required]}),
       email:new FormControl(null, {validators:[Validators.required,Validators.email]}),
     })
   }
@@ -112,9 +112,9 @@ toggleHeader() {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{ status: string}>('https://onewateracademy.org/api/blog/subscribe',this.form.value)
-    .subscribe(result=>{
-      if(result.status == "error"){
+    this.http.postToBackend('/users/subscribe',this.form.value)
+    .then((res: any)=>{
+      if(res.status == "error"){
         //console.log(result,'already suscribed');
         this.modal.hideBtnLoader();
         this.modal.closeModal('#subscribeModal');
