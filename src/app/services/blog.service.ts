@@ -12,7 +12,7 @@ export class BlogService {
   getAllBlogs(limit: number = 10){
     return this.http
       .get<any>(
-        `https://onewaterchain.com/wp-json/wp/v2/posts?_embed&per_page=${limit}`
+        `https://onewateronefuture.com/wp-json/wp/v2/posts?_embed&per_page=${limit}`
       )
       .pipe(
         map((blogs) => {
@@ -35,7 +35,7 @@ export class BlogService {
   getSingleBlog(blogId: number) {
     return this.http
       .get<any>(
-        `https://onewaterchain.com/wp-json/wp/v2/posts/${blogId}?_embed`
+        `https://onewateronefuture.com/wp-json/wp/v2/posts/${blogId}?_embed`
       )
       .toPromise();
   }
@@ -46,7 +46,7 @@ export class BlogService {
   ) {
     return this.http
       .get<any>(
-        `https://onewaterchain.com/wp-json/wp/v2/posts?categories=${fetchCategoryId}&per_page=${perPage}&_embed`
+        `https://onewateronefuture.com/wp-json/wp/v2/posts?categories=${fetchCategoryId}&per_page=${perPage}&_embed`
       )
       .pipe(
         map((blogs) => {
@@ -65,10 +65,10 @@ export class BlogService {
       ).toPromise();
   }
 
-  getBlogCategories(): Observable<Array<Object>> {
+  getBlogCategories() {
     return this.http
       .get<Array<Object>>(
-        `https://onewaterchain.com/wp-json/wp/v2/categories?per_page=28`
+        `https://onewateronefuture.com/wp-json/wp/v2/categories?per_page=28`
       )
       .pipe(
         map((blogCategories) => {
@@ -82,7 +82,7 @@ export class BlogService {
           });
           return finalCats;
         })
-      );
+      ).toPromise();
   }
 
   getMatchingBlogs(
@@ -95,7 +95,7 @@ export class BlogService {
     // Searches in the 100 recent blogs by default
     return this.http
       .get<Array<Object>>(
-        `https://onewaterchain.com/wp-json/wp/v2/posts?_embed&per_page=${limit}`
+        `https://onewateronefuture.com/wp-json/wp/v2/posts?_embed&per_page=${limit}`
       )
       .pipe(
         map((allBlogs) => {

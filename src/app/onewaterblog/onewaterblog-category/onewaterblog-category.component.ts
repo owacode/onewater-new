@@ -11,88 +11,9 @@ export class OnewaterblogCategoryComponent implements OnInit {
 
   constructor(public blogService: BlogService, public route: ActivatedRoute) { }
 
-  categoryBlogs = [
-    {
-      category:'Water',
-      date:'2 October, 2020',
-      title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-      readingTime:5,
-      img:'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    },
-    {
-      category:'Water',
-      date:'2 October, 2020',
-      title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-      readingTime:5,
-      img:'https://images.pexels.com/photos/5589173/pexels-photo-5589173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    },
-    {
-      category:'Water',
-      date:'2 October, 2020',
-      title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-      readingTime:5,
-      img:'https://images.pexels.com/photos/1137340/pexels-photo-1137340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    },
-    {
-      category:'Water',
-      date:'2 October, 2020',
-      title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-      readingTime:5,
-      img:'https://images.pexels.com/photos/2123913/pexels-photo-2123913.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    },
-    {
-      category:'Water',
-      date:'2 October, 2020',
-      title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-      readingTime:5,
-      img:'https://images.pexels.com/photos/4245856/pexels-photo-4245856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-    },
-    {
-      category:'Water',
-      date:'2 October, 2020',
-      title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-      readingTime:5,
-      img:'https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-    }
-  ]
+  categoryBlogs = []
 
-  categories = [
-    {
-      'img': 'assets/img/icons/water.svg',
-      'name': 'Water',
-      'id': 1
-    },
-    {
-      'img': 'assets/img/icons/waste-water.svg',
-      'name': 'Waste Water',
-      'id': 1360
-    },
-    {
-      'img': 'assets/img/icons/storm.svg',
-      'name': 'Storm Water',
-      'id': 1361
-    },
-    {
-      'img': 'assets/img/icons/research.svg',
-      'name': 'Innovation & Research',
-      'id': 1362
-    },
-    {
-      'img': 'assets/img/icons/sustainable.svg',
-      'name': 'Sustainable Development',
-      'id': 1363
-    },
-    {
-      'img': 'assets/img/icons/finance.svg',
-      'name': 'Management & Finance',
-      'id': 1364
-    },
-    {
-      'img': 'assets/img/icons/regulatory.svg',
-      'name': 'Legislative & Regulatory',
-      'id': 1365
-    },
-  ]
+  categories = []
 
   ngOnInit() {
     this.route.params.subscribe(res => {
@@ -102,6 +23,27 @@ export class OnewaterblogCategoryComponent implements OnInit {
         this.categoryBlogs = res
       })
     })
+    this.blogService.getBlogCategories()
+.then((res: any) => {
+  res.forEach(element => {
+    if(element.name == "Innovation and Research")
+    this.categories.push({ name: "Innovation and Research", id: element.id, img: 'assets/img/icons/research.svg'})
+    else if(element.name == "Legislative and Regulatory")
+    this.categories.push({ name: "Legislative and Regulatory", id: element.id, img: 'assets/img/icons/regulatory.svg'})
+    else if(element.name == "Management &amp; Finance")
+    this.categories.push({ name: "Management &amp; Finance", id: element.id, img: 'assets/img/icons/finance.svg'})
+    else if(element.name == "Storm Water")
+    this.categories.push({ name: "Storm Water", id: element.id, img: 'assets/img/icons/storm.svg'})
+    else if(element.name == "Sustainable Development")
+    this.categories.push({ name: "Sustainable Development", id: element.id, img: 'assets/img/icons/sustainable.svg'})
+    else if(element.name == "Waste Water")
+    this.categories.push({ name: "Waste Water", id: element.id, img: 'assets/img/icons/waste-water.svg'})
+    else if(element.name == "Water")
+    this.categories.push({ name: "Water", id: element.id, img: 'assets/img/icons/water.svg'})
+    else
+    this.categories.push({ name: element.name, id: element.id, img: 'assets/img/icons/default-category.svg'})
+  });
+})
   }
 
 }
