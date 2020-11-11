@@ -9,32 +9,55 @@
 
     <div class="category-blogs">
       <div class="row justify-content-center">
+        <div class="col-xl-6">
+          <div class="no-data-card" *ngIf="!categoryBlogs.length">
+            <div class="row justify-content-center">
+              <div class="col-md-6 col-sm-8 col-10">
+                <img src="assets/img/not-found.svg" alt="not found">
+
+              </div>
+            </div>
+
+            <h4 class="text-center">
+              No blogs posted to this category yet. 
+            </h4>
+          </div>
+        </div>
         <div class="col-xl-6 col-lg-10" *ngFor="let item of categoryBlogs">
-          <a [routerLink]="['/onewaterblog/blogpost']">
+          <a [routerLink]="['/onewaterblog/blogpost', item?.id]">
             <div class="blog-card blog-card-featured" >
               <div class="blog-img">
-                <img [src]="item?.img" alt="blog" />
+                <img [src]="item?.thumbnail" alt="blog" />
               </div>
               <div class="blog-content">
                 <h6 class="text-600">
                   <span class="blog-category">
                     {{ item?.category }}
                   </span>
+                  -
+                  <span class="blog-date">
+                    {{ item?.dateAdded | date: 'MMMM d, y' }}
+                  </span>
                 </h6>
   
                 <h5 class="blog-title mt-0">
                   {{ item?.title | shorten: 70 }}
                 </h5>
+
+               
   
-                <h6 class="blog-date">
-                  <span class="icon">
-                    <i class="material-icons">today</i>
-                  </span>
+              
   
-                  {{ item?.dateAdded | date: 'MMMM d, y' }}
-                </h6>
-  
-                <div
+
+                <div>
+                  <div class="blog-author blog-author-small mt-0">
+                    <img [src]="item?.authorImg" alt="" class="blog-author-img">
+      
+                    <h6 class="blog-author-name">
+                      {{item?.author}}
+                    </h6>
+                  </div>
+                  <div
                   class="d-flex align-items-center justify-content-between mt-2"
                 >
                   <h6 class="blog-read">
@@ -45,8 +68,10 @@
                     {{ item?.readingTime }} mins read
                   </h6>
   
-                  <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                  <a class="btn-dark btn-sm blog-btn mt-0" [routerLink]="['/onewaterblog/blogpost', item?.id]"> Read more </a>
                 </div>
+                </div>
+               
               </div>
             </div>
           </a>

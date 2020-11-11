@@ -38,9 +38,18 @@
                         <h4 class="blog-title">
                           {{ item?.title }}
                         </h4>
+
+                        <div class="blog-author">
+                          <img [src]="item?.authorImg" alt="" class="blog-author-img">
+
+                          <h6 class="blog-author-name">
+                            {{item?.author}}
+                          </h6>
+                        </div>
                       </div>
 
                       <div class="blog-wrapper">
+                        
                         <h6 class="blog-read">
                           <span class="icon">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -57,7 +66,7 @@
                   </div>
                   <div class="col-md-7 order-first">
                     <div class="blog-img">
-                      <img src="https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="blog" />
+                      <img [src]="item?.thumbnail" alt="blog" />
                       <img
                         src="assets/img/vertical-wave.svg"
                         alt="wave"
@@ -114,49 +123,77 @@
           <a [routerLink]="['/onewaterblog/blogpost', item?.id]">
           <div class="blog-card blog-card-featured">
             <div class="blog-img">
-              <img src="https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="blog" />
+              <img [src]="item?.thumbnail" alt="blog" />
             </div>
             <div class="blog-content">
+            <div>
               <h6 class="text-600">
                 <span class="blog-category">
                   {{ item?.category }}
                 </span>
+                -
+                <span class="blog-date">
+                  {{ item?.dateAdded | date: 'MMMM d, y' }}
+                </span>
               </h6>
+
+              <!-- <h6 class="text-600">
+                <span class="blog-category">
+                  {{ item?.category }}
+                </span>
+              </h6> -->
 
               <h5 class="blog-title mt-0">
                 {{ item?.title | shorten: 70 }}
               </h5>
 
-              <h6 class="blog-date">
+             
+            </div>
+
+
+              <!-- <h6 class="blog-date">
                 <span class="icon">
                   <i class="material-icons">today</i>
                 </span>
 
                 {{ item?.dateAdded | date: 'MMMM d, y' }}
+              </h6> -->
+
+           <div>
+            <div class="blog-author mt-0">
+              <img [src]="item?.authorImg" alt="" class="blog-author-img">
+
+              <h6 class="blog-author-name">
+                {{item?.author}}
               </h6>
+            </div>
 
-              <div
-                class="d-flex align-items-center justify-content-between mt-2"
-              >
-                <h6 class="blog-read">
-                  <span class="icon">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                  </span>
+            <div
+            class="d-flex align-items-center justify-content-between mt-2"
+          >
+            <h6 class="blog-read">
+              <span class="icon">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+              </span>
 
-                  {{ item?.readingTime }} mins read
-                </h6>
+              {{ item?.readingTime }} mins read
+            </h6>
 
-                <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
-              </div>
+            <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+          </div>
+           </div>
+            
             </div>
           </div>
           </a>
         </div>
       </div>
     </div>
+
+    <img src="assets/img/white-wave-2.svg" alt="img" class="bottom-wave" />
   </section>
 
-  <img src="assets/img/white-wave-2.svg" alt="img" class="bottom-wave" />
+  
 </div>
 
 <!-- <section class="popular-blogs">
@@ -175,7 +212,7 @@
             <a [routerLink]="['/onewaterblog/blogpost']">
             <div class="blog-card blog-card-popular">
               <div class="blog-img">
-                <img [src]="item?.img" alt="blog" />
+                <img [src]="item?.thumbnail" alt="blog" />
               </div>
 
               <div class="blog-content">
@@ -273,29 +310,37 @@
                 <div
                   [class.col-sm-6]="(i + 1) % 3 != 0"
                   [class.col-sm-12]="(i + 1) % 3 == 0"
-                  *ngFor="let item of latestBlogs; let i = index"
+                  *ngFor="let item of latestBlogsLeft; let i = index"
                 >
-                <a [routerLink]="['/onewaterblog/blogpost', item?.id]">
-                  <div class="blog-card" *ngIf="(i + 1) % 3 != 0">
+                <a [routerLink]="['/onewaterblog/blogpost', item?.id]" *ngIf="(i + 1) % 3 != 0">
+                  <div class="blog-card">
                     <div class="blog-img">
-                      <img src="https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="blog" />
+                      <img [src]="item?.thumbnail" alt="blog" />
                     </div>
 
                     <div class="blog-content mt-3">
-                      <h6 class="text-700 blog-category">
-                        {{ item?.category }}
+                      <h6 class="text-600">
+                        <span class="blog-category">
+                          {{ item?.category }}
+                        </span>
+                        -
+                        <span class="blog-date">
+                          {{ item?.dateAdded | date: 'MMMM d, y' }}
+                        </span>
                       </h6>
                       <h5 class="blog-title mt-1 mb-2">
                         {{ item?.title | shorten: 50 }}
                       </h5>
 
-                      <h6 class="blog-date">
-                        <span class="icon">
-                          <i class="material-icons">today</i>
-                        </span>
+                      <div class="blog-author blog-author-small mt-0">
+                        <img [src]="item?.authorImg" alt="" class="blog-author-img">
+          
+                        <h6 class="blog-author-name">
+                          {{item?.author}}
+                        </h6>
+                      </div>
 
-                        {{ item?.dateAdded | date: 'MMMM d, y' }}
-                      </h6>
+                     
 
                       <div
                         class="d-flex align-items-center justify-content-between mt-4"
@@ -311,13 +356,13 @@
                     </div>
                   </div>
                   </a>
-                  <a [routerLink]="['/onewaterblog/blogpost', item?.id]">
+                  <a [routerLink]="['/onewaterblog/blogpost', item?.id]"  *ngIf="(i + 1) % 3 == 0">
                   <div
                     class="blog-card blog-card-horizontal"
-                    *ngIf="(i + 1) % 3 == 0"
+                   
                   >
                     <div class="blog-img">
-                      <img src="https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="blog" />
+                      <img [src]="item?.thumbnail" alt="blog" />
                     </div>
                     <div class="blog-content">
                       <div>
@@ -325,22 +370,28 @@
                           <span class="blog-category">
                             {{ item?.category }}
                           </span>
+                          -
+                          <span class="blog-date">
+                            {{ item?.dateAdded | date: 'MMMM d, y' }}
+                          </span>
                         </h6>
 
                         <h5 class="blog-title mt-0 mb-3">
                           {{ item?.title | shorten: 50 }}
                         </h5>
 
-                        <h6 class="blog-date">
-                          <span class="icon">
-                            <i class="material-icons">today</i>
-                          </span>
-
-                          {{ item?.dateAdded | date: 'MMMM d, y' }}
-                        </h6>
+                        
                       </div>
+                      <div>
+                        <div class="blog-author mt-0">
+                          <img [src]="item?.authorImg" alt="" class="blog-author-img">
+            
+                          <h6 class="blog-author-name">
+                            {{item?.author}}
+                          </h6>
+                        </div>
 
-                      <div
+                        <div
                         class="d-flex align-items-center justify-content-between mt-2"
                       >
                         <h6 class="blog-read">
@@ -353,40 +404,49 @@
 
                         <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
                       </div>
+                      </div>
+                    
                     </div>
                   </div>
                   </a>
                 </div>
               </div>
             </div>
-            <!-- <div class="col-xl-6">
+            <div class="col-xl-6">
               <div class="row">
                 <div
                   [class.col-sm-6]="i % 3 != 0"
                   [class.col-sm-12]="i % 3 == 0"
-                  *ngFor="let item of latestBlogs; let i = index"
+                  *ngFor="let item of latestBlogsRight; let i = index"
                 >
-                <a [routerLink]="['/onewaterblog/blogpost']">
-                  <div class="blog-card" *ngIf="i % 3 != 0">
+                <a [routerLink]="['/onewaterblog/blogpost', item?.id]" *ngIf="i % 3 != 0">
+                  <div class="blog-card" >
                     <div class="blog-img">
-                      <img [src]="item?.img" alt="blog" />
+                      <img [src]="item?.thumbnail" alt="blog" />
                     </div>
 
                     <div class="blog-content mt-3">
-                      <h6 class="text-700 blog-category">
-                        {{ item?.category }}
+                      <h6 class="text-600">
+                        <span class="blog-category">
+                          {{ item?.category }}
+                        </span>
+                        -
+                        <span class="blog-date">
+                          {{ item?.dateAdded | date: 'MMMM d, y' }}
+                        </span>
                       </h6>
+
                       <h5 class="blog-title mt-1 mb-2">
                         {{ item?.title | shorten: 50 }}
                       </h5>
-
-                      <h6 class="blog-date">
-                        <span class="icon">
-                          <i class="material-icons">today</i>
-                        </span>
-
-                        {{ item?.date }}
-                      </h6>
+                      <div class="blog-author blog-author-small mt-0">
+                        <img [src]="item?.authorImg" alt="" class="blog-author-img">
+          
+                        <h6 class="blog-author-name">
+                          {{item?.author}}
+                        </h6>
+                      </div>
+                     
 
                       <div
                         class="d-flex align-items-center justify-content-between mt-4"
@@ -397,18 +457,18 @@
                           </span>
                           {{ item?.readingTime }} mins read
                         </h6>
-                        <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                        <a class="btn-dark btn-sm blog-btn mt-0" [routerLink]="['/onewaterblog/blogpost', item?.id]"> Read more </a>
                       </div>
                     </div>
                   </div>
                   </a>
-                  <a [routerLink]="['/onewaterblog/blogpost']">
+                  <a [routerLink]="['/onewaterblog/blogpost', item?.id]" *ngIf="i % 3 == 0">
                   <div
                     class="blog-card blog-card-horizontal"
-                    *ngIf="i % 3 == 0"
+                    
                   >
                     <div class="blog-img">
-                      <img [src]="item?.img" alt="blog" />
+                      <img [src]="item?.thumbnail" alt="blog" />
                     </div>
                     <div class="blog-content">
                       <div>
@@ -422,15 +482,19 @@
                           {{ item?.title | shorten: 50 }}
                         </h5>
 
-                        <h6 class="blog-date">
-                          <span class="icon">
-                            <i class="material-icons">today</i>
-                          </span>
-
-                          {{ item?.date }}
-                        </h6>
+                       
                       </div>
 
+                      <div>
+
+                      
+                      <div class="blog-author mt-0">
+                        <img [src]="item?.authorImg" alt="" class="blog-author-img">
+          
+                        <h6 class="blog-author-name">
+                          {{item?.author}}
+                        </h6>
+                      </div>
                       <div
                         class="d-flex align-items-center justify-content-between mt-2"
                       >
@@ -442,14 +506,15 @@
                           {{ item?.readingTime }} mins read
                         </h6>
 
-                        <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                        <a class="btn-dark btn-sm blog-btn mt-0" [routerLink]="['/onewaterblog/blogpost', item?.id]"> Read more </a>
                       </div>
+                    </div>
                     </div>
                   </div>
                   </a>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>

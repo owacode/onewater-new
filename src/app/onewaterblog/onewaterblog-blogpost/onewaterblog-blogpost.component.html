@@ -1,12 +1,44 @@
-<div class="blogpost-header" style="background-image: url(https://images.pexels.com/photos/5437363/pexels-photo-5437363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+<div class="blogpost-header"
+[ngStyle]="{ 'background-image': 'url(' + blog?.thumbnail + ')' }"
+>
   <div class="gradient-image"></div>
   <img src="assets/img/white-wave-2.svg" alt="img" class="bottom-wave" />
 </div>
 <div class="blogpost-body">
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10">
+        
           <h1 class="blogpost-heading">{{blog?.title.rendered}}</h1>
+         
+          <div class="d-flex align-items-center">
+            <h6>
+              Category - 
+            </h6>
+            <h6 class="blogpost-category ml-1">
+              {{ blog?._embedded['wp:term'][0][0].name
+            }}
+          </h6>
+          </div>
+        
+          <div class="blogpost-author">
+            <div class="blogpost-author-img">
+              <img [src]="blog?._embedded?.author[0]?.avatar_urls['96']" alt="author">
+            </div>
+            <div class="blogpost-author-text">
+              <h6>
+                Author
+              </h6>
+              <h5>
+                {{blog?._embedded?.author[0]?.name}}
+              </h5>
+
+              <h6 class="text-500">
+                {{blog?.date | date: 'MMMM d, y'}}
+              </h6>
+            </div>
+        </div>
+         
   
           <!--demo blog content-->
           <div class="blog-post-content">

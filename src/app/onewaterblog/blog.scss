@@ -45,7 +45,7 @@ $modularscale: (
         }
     }
 
-    &-date,&-read,&-category{
+    &-date,&-read,&-category, &-author-small .blog-author-name{
         @include ms-respond(font-size,-0.3);
         font-weight: 600;
     }
@@ -85,6 +85,32 @@ $modularscale: (
             width: auto;
             object-fit: cover;
             object-position: center;
+        }
+    }
+    &-author{
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        &-img{
+            border: 1.5px solid #ccc;
+            padding: 1.5px;
+            height: 1.5rem !important;
+            width: 1.5rem !important;
+            border-radius: 50%;
+        }
+        &-name{
+            margin-left: 0.6rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            opacity: 0.7;
+        }
+
+        &-small{
+            .blog-author-img{
+                padding: 0.6px;
+                height: 1.3rem !important;
+                width: 1.3rem !important;
+            }
         }
     }
 
@@ -288,7 +314,7 @@ $modularscale: (
 
 .bottom-wave{
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     z-index: 0;

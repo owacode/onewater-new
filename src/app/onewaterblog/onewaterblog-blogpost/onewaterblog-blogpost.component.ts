@@ -63,7 +63,10 @@ export class OnewaterblogBlogpostComponent implements OnInit {
       this.blogService.getSingleBlog(res.id)
       .then((res: any) => {
         console.log(res)
-        this.blog = res
+        this.blog = res;
+
+        this.blog.thumbnail = this.blogService.findThumbnail(this.blog.content.rendered);
+        
       })
     })
   }

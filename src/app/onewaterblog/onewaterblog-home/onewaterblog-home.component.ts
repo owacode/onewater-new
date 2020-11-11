@@ -15,50 +15,9 @@ export class OnewaterblogHomeComponent implements OnInit {
   featuredBlogs = [];
   popularBlogs = [];
   latestBlogs = [];
-  bannerBlogs = [
-    // {
-    //   category:'Water',
-    //   date:'2 October, 2020',
-    //   title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-    //   readingTime:5,
-    //   img:'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    // },
-    // {
-    //   category:'Water',
-    //   date:'2 October, 2020',
-    //   title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-    //   readingTime:5,
-    //   img:'https://images.pexels.com/photos/5589173/pexels-photo-5589173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    // },
-    // {
-    //   category:'Water',
-    //   date:'2 October, 2020',
-    //   title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-    //   readingTime:5,
-    //   img:'https://images.pexels.com/photos/1137340/pexels-photo-1137340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    // },
-    // {
-    //   category:'Water',
-    //   date:'2 October, 2020',
-    //   title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-    //   readingTime:5,
-    //   img:'https://images.pexels.com/photos/2123913/pexels-photo-2123913.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-    // },
-    // {
-    //   category:'Water',
-    //   date:'2 October, 2020',
-    //   title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-    //   readingTime:5,
-    //   img:'https://images.pexels.com/photos/4245856/pexels-photo-4245856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-    // },
-    // {
-    //   category:'Water',
-    //   date:'2 October, 2020',
-    //   title:'Deep Diving into the Water Sector – Gaining Insights on Current Workforce Needs',
-    //   readingTime:5,
-    //   img:'https://images.pexels.com/photos/1040492/pexels-photo-1040492.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-    // }
-  ]
+  bannerBlogs = []
+  latestBlogsLeft = [];
+  latestBlogsRight = [];
 
   categories = [
     // {
@@ -97,6 +56,7 @@ export class OnewaterblogHomeComponent implements OnInit {
     //   'id': 1365
     // },
   ]
+
   @ViewChild(OwlCarousel) landingCarousel: OwlCarousel;
 
   landingBlogsCarousel = {
@@ -149,14 +109,13 @@ export class OnewaterblogHomeComponent implements OnInit {
   constructor(public http: HttpService, public blogService: BlogService) { }
 
   ngOnInit() {
-    
-// this.featuredBlogs = this.bannerBlogs;
-// this.popularBlogs = this.bannerBlogs;
-// this.latestBlogs = this.bannerBlogs;
 this.blogService.getAllBlogs().then((res: any) => {
   this.latestBlogs = res
   this.featuredBlogs = this.latestBlogs.filter(blog => blog.featured == 'True')
-  console.log(this.featuredBlogs, this.latestBlogs)
+  console.log(this.featuredBlogs, this.latestBlogs);
+ let half = Math.ceil(this.latestBlogs.length / 2);
+  this.latestBlogsLeft = this.latestBlogs.slice(0,half);
+  this.latestBlogsRight = this.latestBlogs.slice(half,this.latestBlogs.length);
 })
 this.blogService.getBlogCategories()
 .then((res: any) => {
