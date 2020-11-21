@@ -113,9 +113,17 @@ this.blogService.getAllBlogs().then((res: any) => {
   this.latestBlogs = res
   this.featuredBlogs = this.latestBlogs.filter(blog => blog.featured == 'True')
   console.log(this.featuredBlogs, this.latestBlogs);
- let half = Math.ceil(this.latestBlogs.length / 2);
-  this.latestBlogsLeft = this.latestBlogs.slice(0,half);
-  this.latestBlogsRight = this.latestBlogs.slice(half,this.latestBlogs.length);
+
+  if(this.latestBlogs.length > 3){
+    let half = Math.ceil(this.latestBlogs.length / 2);
+    this.latestBlogsLeft = this.latestBlogs.slice(0,half);
+    this.latestBlogsRight = this.latestBlogs.slice(half,this.latestBlogs.length);
+  }
+  else{
+    this.latestBlogsLeft = this.latestBlogs;
+  }
+
+
 })
 this.blogService.getBlogCategories()
 .then((res: any) => {
