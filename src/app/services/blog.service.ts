@@ -17,6 +17,7 @@ export class BlogService {
       )
       .pipe(
         map((blogs) => {
+          console.log(blogs[0]._embedded['wp:featuredmedia'][0].media_details.sizes, '##')
           let tempBlogs = blogs.map(blog => {
             return {
               id: blog.id,
@@ -25,29 +26,14 @@ export class BlogService {
               authorImg: blog._embedded.author[0].avatar_urls['24'],
               category: blog._embedded['wp:term'][0][0].name,
               dateAdded: blog.date,
-              thumbnail:this.findThumbnail(blog.content.rendered), 
+              thumbnail: blog._embedded['wp:featuredmedia'] ? blog._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url : this.findThumbnail(blog.content.rendered), 
               featured: blog.featured,
-              readingTime: 5
+              readingTime: this.calculateReadTime(blog.content.rendered)
             }
           })
           return tempBlogs
         })
       ).toPromise();
-  }
-
-  findThumbnail(htmlString: string): string {
-    //console.log("blog thumb functions");
-
-    if(htmlString.match('(<img .*?>)')){
-      const imgTag: string = htmlString.match('(<img .*?>)')[0].toString();
-      const image = $(imgTag).attr('src');
-
-      return image;
-    }
-   
-    else
-    return 'assets/img/blog-default.jpg';
-   
   }
 
   getSingleBlog(blogId: number) {
@@ -73,12 +59,12 @@ export class BlogService {
               id: blog.id,
               title: blog.title.rendered,
               author: blog._embedded.author[0].name,
-              thumbnail:this.findThumbnail(blog.content.rendered), 
+              thumbnail: blog._embedded['wp:featuredmedia'] ? blog._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url : this.findThumbnail(blog.content.rendered), 
               authorImg: blog._embedded.author[0].avatar_urls['24'],
               category: blog._embedded['wp:term'][0][0].name,
               dateAdded: blog.date,
               content: blog.content.rendered,
-              readingTime: 5
+              readingTime: this.calculateReadTime(blog.content.rendered)
             }
           })
           return tempBlogs
@@ -130,5 +116,28 @@ export class BlogService {
           return listOfBlogs;
         })
       );
+  }
+
+  
+  calculateReadTime(content) {
+    
+    let count=content.split(' ').length;
+    let min=Math.ceil(count/255);
+    return min.toString()
+  }
+
+  findThumbnail(htmlString: string): string {
+    //console.log("blog thumb functions");
+
+    if(htmlString.match('(<img .*?>)')){
+      const imgTag: string = htmlString.match('(<img .*?>)')[0].toString();
+      const image = $(imgTag).attr('src');
+
+      return image;
+    }
+   
+    else
+    return 'assets/img/blog-default.jpg';
+   
   }
 }

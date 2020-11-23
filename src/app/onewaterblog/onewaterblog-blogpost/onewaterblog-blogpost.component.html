@@ -62,7 +62,7 @@
 <div class="more-blogs">
   <div class="my-container">
     
-<section class="popular-blogs">
+<section class="popular-blogs" *ngIf="popularBlogs.length">
   <div class="my-container">
     <div class="popular-container">
       <h2 class="text-center">You may also like</h2>
@@ -75,10 +75,10 @@
           [carouselClasses]="['owl-theme', 'row', 'sliding']"
         >
           <div class="item" *ngFor="let item of popularBlogs">
-            <a [routerLink]="['/onewaterblog/blogpost']">
+            <a [routerLink]="['/onewaterblog/blogpost', item?.id]">
             <div class="blog-card blog-card-popular">
               <div class="blog-img">
-                <img [src]="item?.img" alt="blog" />
+                <img [src]="item?.thumbnail" alt="blog" />
               </div>
 
               <div class="blog-content">
@@ -109,7 +109,7 @@
                     {{ item?.readingTime }} mins read
                   </h6>
 
-                  <a class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                  <a [routerLink]="['/onewaterblog/blogpost', item?.id]" class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
                 </div>
               </div>
             </div>
