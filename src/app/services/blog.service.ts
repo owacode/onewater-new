@@ -17,7 +17,6 @@ export class BlogService {
       )
       .pipe(
         map((blogs) => {
-          console.log(blogs[0]._embedded['wp:featuredmedia'][0].media_details.sizes, '##')
           let tempBlogs = blogs.map(blog => {
             return {
               id: blog.id,
