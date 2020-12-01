@@ -9,6 +9,8 @@
 @import 'blog-global-styles.scss';
 @import 'landing-section-styles.scss';
 @import 'mixins';
+@import 'blog-post.scss';
+
 
 *{
   margin: 0;
@@ -583,3 +585,5 @@ a.btn-white, a.btn-dark,.btn-white,.btn-dark{
   }
   
 }
+
+

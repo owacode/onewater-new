@@ -1,0 +1,35 @@
+.blog-post-content{
+    img{
+       //width: 100%;
+        height: auto;
+        display: block;
+        margin: 1.2rem 0 1.8rem;
+    }
+
+
+    p,ul li, ol li, em{
+        text-align: justify;
+        line-height: 1.8;
+
+    }
+
+    p{
+        margin-bottom: 1;
+    }
+
+  h1,h2,h3,h4,h5,h6{
+      text-align: left;
+  }
+    ul,ol{
+        padding: 0 3rem;
+
+        li{
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    strong{
+        font-weight: 800;
+    }
+    
+}
