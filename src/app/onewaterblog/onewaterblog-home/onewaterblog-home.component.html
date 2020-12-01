@@ -305,7 +305,51 @@
       <div class="row justify-content-center">
         <div class="col-xl-12 col-lg-8 col-md-10">
           <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-3 col-lg-4 col-sm-6 d-flex" *ngFor="let item of latestBlogs">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img [src]="item?.thumbnail" alt="blog" />
+                </div>
+
+                <div class="blog-content mt-3">
+                  <h6 class="text-600">
+                    <span class="blog-category">
+                      {{ item?.category }}
+                    </span>
+                    -
+                    <span class="blog-date">
+                      {{ item?.dateAdded | date: 'MMMM d, y' }}
+                    </span>
+                  </h6>
+                  <h5 class="blog-title mt-1 mb-2">
+                    {{ item?.title | shorten: 50 }}
+                  </h5>
+
+                  <div class="blog-author blog-author-small mt-0">
+                    <img [src]="item?.authorImg" alt="" class="blog-author-img">
+      
+                    <h6 class="blog-author-name">
+                      {{item?.author}}
+                    </h6>
+                  </div>
+
+                 
+
+                  <div
+                    class="d-flex align-items-center justify-content-between mt-4"
+                  >
+                    <h6 class="blog-read">
+                      <span class="icon">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      </span>
+                      {{ item?.readingTime }} mins read
+                    </h6>
+                    <a [routerLink]="['/onewaterblog/blogpost', item?.id]" class="btn-dark btn-sm blog-btn mt-0"> Read more </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-xl-6">
               <div class="row">
                 <div
                   [class.col-sm-6]="(i + 1) % 3 != 0"
@@ -514,7 +558,7 @@
                   </a>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
